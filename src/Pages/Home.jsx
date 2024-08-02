@@ -163,7 +163,7 @@ function Home() {
             <img src={hero_mountain} className='absolute bottom-0 left-[50%] translate-x-[-50%] max-w-[100%] w-[44.5rem] z-[1]' alt="" />
             <div className="h-auto flex-col justify-start items-center gap-[29px] px-4 inline-flex relative z-[10]">
               <img src={nimbi_hero} alt="Nimbi Hero Image" />
-              <div className="text-center text-white sm:text-6xl text-[50px] font-medium font-roboto leading-[60.48px]">Turn Play Into Profits<br />Unite the world with crypto dust</div>
+              <div className="text-center text-white sm:text-6xl text-[50px] font-medium font-roboto leading-[60.48px] uppercase">Turn Play Into Profits<br />Unite the world with crypto dust</div>
               <div className="text-center max-w-[661px] text-white text-2xl font-normal font-['Roboto'] leading-[30px]">Play to earn crypto dust, collect exclusive digital wolf NFTs, and join the world’s biggest online Wolfpack.</div>
               <div className="btn">Join The Wolfpack</div>
             </div>
