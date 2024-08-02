@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import '../App.css'
 import { AnimationCard, CommunityCard, IntroCard, NFTCard, Navbar } from '../components'
-import { play, collect, profit, author1, author2, author3, author4, author5, ellipse, discord, telegram, x, vector, tick, mountain, indicator, round, whaleLeft, roadmap, logoMask, instagram, youtube, nimbi_hero, mountain_back, black_dog, our, ethos, eth_white, eth_black, ecosystem, mobile2, mobile1, hero_mountain, dualtoken, dolphin, dog_shade, circle_graph, tokenDolphin, fox, puppy, chain, bluePen, foxHead } from '../assets'
+import { play, collect, profit, author1, author2, author3, author4, author5, ellipse, discord, telegram, x, vector, tick, mountain, indicator, round, whaleLeft, roadmap, logoMask, instagram, youtube, nimbi_hero, mountain_back, black_dog, our, ethos, eth_white, eth_black, ecosystem, mobile2, mobile1, hero_mountain, dualtoken, dolphin, dog_shade, circle_graph, tokenDolphin, fox, puppy, chain, bluePen, foxHead, sec3Bottom } from '../assets'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,6 +16,7 @@ function Home() {
   useGSAP(() => {
 
     const sections = gsap.utils.toArray(".container section");
+    const ethos = gsap.utils.toArray('.ethos-section .ethos');
     const mask = document.querySelector(".mask");
 
     var xPercent = 0, from = 0, to = 0, sectionStart = 0;
@@ -118,6 +119,21 @@ function Home() {
       });
     }
 
+    ethos.forEach((ethos, index) => {
+      gsap.from(ethos, {
+        y: 200,
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '.ethos-section',
+          // markers: 1,
+          scrub: 1,
+          start: width>768?`top ${20 * (3  - index)}%`:`top -${10 * (3 + index)}%`,
+          end: `bottom ${60}%`,
+        }
+      })
+    })
+
 
     // gsap.fromTo(mask, {
     //   width: from
@@ -165,18 +181,18 @@ function Home() {
           <div className="absolute sm:top-[290px] sm:left-[50%] sm:h-full h-[108px] -left-[396px] sm:-translate-x-[50%] sm:w-screen min-w-[910px] top-[132px] z-[1]">
             <img src={mountain_back} className="w-full" alt="Back side Mountain" />
           </div>
-          <div className="z-[10] relative flex justify-between 2xl:w-[1506px] items-center lg:gap-[100px] gap-5 lg:flex-row flex-col-reverse">
+          <div className="ethos-section z-[10] relative flex justify-between 2xl:w-[1506px] items-center lg:gap-[100px] gap-5 lg:flex-row flex-col-reverse">
             <div className=" h-fit">
               <div className="xs:max-w-[501px] w-full h-auto px-[45px] pt-[110px] pb-[42px] bg-[#1c2327] border-b border-[#767f84] flex-col justify-start items-start gap-[107px] inline-flex">
-                <div className="self-stretch flex-col justify-start fade-in items-start gap-[19px] flex">
+                <div className="ethos self-stretch flex-col justify-start fade-in items-start gap-[19px] flex">
                   <div className="text-center text-white text-4xl font-medium font-roboto capitalize leading-loose">Unity</div>
                   <div className="self-stretch text-[#ebeced] text-base font-normal font-['Roboto'] leading-normal">We believe in people over profits and politics. We won’t be divided by the interests of elites any longer. Our mission is to take back control from the tech giants and put the power and profit back into the hands of the community. We’re growing the biggest wolfpack on the planet—are you on board?</div>
                 </div>
-                <div className="self-stretch flex-col justify-start fade-in items-start gap-[19px] flex">
+                <div className="ethos self-stretch flex-col justify-start fade-in items-start gap-[19px] flex">
                   <div className="text-center text-white text-4xl font-medium font-roboto capitalize leading-loose">Resilience</div>
                   <div className="self-stretch text-[#ebeced] text-base font-normal font-['Roboto'] leading-normal">There are enough useless Web3 projects and shitcoins out there already. We’re building useful decentralized applications </div>
                 </div>
-                <div className="self-stretch sm:pb-[150px] pb-[50px] fade-in flex-col justify-start items-start gap-[19px] flex">
+                <div className="ethos self-stretch sm:pb-[150px] pb-[50px] fade-in flex-col justify-start items-start gap-[19px] flex">
                   <div className="text-center text-white text-4xl font-medium font-roboto capitalize leading-loose">Empowerment</div>
                   <div className="self-stretch text-[#ebeced] text-base font-normal font-['Roboto'] leading-normal">There are enough useless Web3 projects and shitcoins out there already. We’re building useful decentralized applications </div>
                 </div>
@@ -311,11 +327,11 @@ function Home() {
         {/* DE-FI Lottery Section End */}
 
         {/* Earn Tokens Section Start */}
-        <div className="h-[105rem] xxs:h-[92rem] xs:h-[100rem] sm:h-[108rem] relative md:h-auto bg-[#242D32]">
+        <div className="h-[1175px] xxs:h-[1175px] xs:h-[90rem] sm:h-[108rem] relative md:h-auto bg-[#242D32]">
 
-          <div className="flex flex-col justify-end items-start md:justify-center bg-[url(./assets/msec3.png)] xs:bg-[url(./assets/tsec3.png)] md:bg-[url(./assets/sec3.png)] w-[full] bg-transparent h-full lg:h-[70vw] 2xl:h-[48.25vw] lg:bg-center bg-top xs:bg-right bg-no-repeat bg-cover 2xl:bg-contain sm:pb-[4rem] md:pb-0">
-            <div className="w-full md:w-[80%] mx-auto ">
-              <div className="pb-[6rem] xxs:pb-[5rem] xs:pb-[7rem] sm:pb-[4.5rem] 2xl:pb-[0.5rem] 3xl:pb-[4.5rem] md:pt-[96px] px-4 xxs:px-4 sm:px-10 md:px-0 flex flex-col md:w-[75%] xl:w-[65%] 3xl:w-[50%] gap-6 xl:gap-9 items-center md:items-start justify-around lg:justify-center text-[#151b1e] md:max-w-[588px] xl:max-w-[unset]">
+          <div className="flex flex-col justify-end items-end xs:items-start md:justify-center bg-[url(./assets/msec3.png)] xs:bg-[url(./assets/tsec3.png)] md:bg-[url(./assets/sec3.png)] w-[full] bg-transparent h-full lg:h-[70vw] 2xl:h-[48.35vw] lg:bg-center bg-top xs:bg-right bg-no-repeat bg-cover 2xl:bg-contain sm:pb-[4rem] md:pb-0">
+            <div className="w-full  md:w-[80%] mx-auto ">
+              <div className="pb-[4rem] xxs:pb-[6rem] xs:pb-[9rem] sm:pb-[7.5rem] 2xl:pb-[0.5rem] 3xl:pb-[4.5rem] md:pt-[96px] px-4 xxs:px-4 sm:px-10 md:px-0 flex flex-col md:w-[75%] xl:w-[65%] 3xl:w-[50%] gap-6 xl:gap-9 items-center md:items-start justify-around lg:justify-center text-[#151b1e] md:max-w-[588px] xl:max-w-[unset]">
                 <div className="">
                   <p className="sm:text-[84px] text-[60px] leading-normal font-bold uppercase sm:leading-[85px] font-['Roboto_Condensed',sans-serif] xl:w-[80%] 3xl:w-full">Earn Tokens by playing</p>
                   <p className='text-2xl pt-[21px] font-semibold tracking-tighter w-full xl:w-[60%] 2xl:w-[70%] 3xl:w-[85%]'>Ready to lead the pack against the corporate whales?</p>
@@ -332,6 +348,8 @@ function Home() {
               </div>
             </div>
           </div>
+          <img src={sec3Bottom} className='w-full absolute bottom-0 xs:hidden' alt="" />
+
         </div>
         {/* Earn Tokens Section End */}
 
@@ -355,7 +373,7 @@ function Home() {
               </div>
             </div>
             <div className="flex-col justify-start items-center gap-[39px] flex max-w-[1171px]">
-              <div className="self-stretch text-center text-[#a1a7aa] sm:text-[80px] text-[60px] font-medium font-roboto sm:leading-[93px] leading-normal">Dual-Token Liquidity System</div>
+              <div className="self-stretch text-center text-[#a1a7aa] sm:text-[80px] text-[60px] font-medium font-roboto sm:leading-[93px] leading-normal uppercase">Dual-Token Liquidity System</div>
               <div className="self-stretch text-center text-[#ebeced] text-base font-normal font-['Roboto'] leading-normal">From a 3D online multiplayer play-to-earn game to crypto lottery and airdrops, the Nimbi ecosystem supports a strong pack of dApps powered by $NIMBI and $KAZI. Nimbi and Kazi are fraternal twins who support each other. $NIMBI is capped at 10,000 tokens giving you access to Crypto Dust Runner, in-game assets and a unique NFT art collection.</div>
             </div>
           </div>
@@ -673,7 +691,7 @@ function Home() {
         <div className="grid w-screen grid-cols-1 gap-[70px] sm:gap-[120px]">
           <div className="w-screen overflow-hidden pt-[80px] sm:pt-[206px]">
             <div className="flex-col justify-start items-center gap-[76px] flex">
-              <div className="text-center text-[#a1a7aa] text-[60px] leading-normal sm:text-[80px] font-medium font-roboto sm:leading-[80px]">Sink your fangs into these</div>
+              <div className="text-center text-[#a1a7aa] text-[60px] leading-normal sm:text-[80px] font-medium font-roboto sm:leading-[80px] uppercase">Sink your fangs into these</div>
               <div className="self-stretch bg-[#1c2327] border-t border-b border-[#767f84] flex-col justify-start items-center flex">
                 <div className="max-w-[1504px] w-full grid xl:grid-cols-3 grid-cols-1 justify-center">
                   <div className="flex justify-center">
@@ -731,7 +749,7 @@ function Home() {
           </div>
           <div className="w-screen px-8 py-[79px] bg-white flex-col justify-start items-center gap-5 inline-flex">
             <img className="w-[242px] h-[242px]" src={bluePen} alt="bluePen" />
-            <div className="text-black text-6xl font-medium font-roboto leading-[60px]">Whitepaper</div>
+            <div className="text-black text-6xl font-medium font-roboto leading-[60px] uppercase">Whitepaper</div>
             <div className="max-w-[1032px] text-center text-black text-base font-normal font-['Roboto'] capitalize leading-normal">Explore the Nimbi whitepaper and get an in-depth breakdown of the unique benefits, innovative features, and overall vision of the NIMBI ecosystem and its native token. This clear, concise, and expertly crafted informational report will help you understand exactly what sets NIMBI apart from other crypto projects.<br /><br />Dive into our educational white paper and find out why taking this journey with us is an absolute no-brainer!</div>
             <div className="px-3.5 py-2.5 hover:bg-[#242d32] duration-300 cursor-pointer bg-[#33bdeb] xs:w-fit w-full rounded justify-center items-start gap-2.5 inline-flex">
               <div className="px-1 justify-start items-start gap-2.5 flex">
@@ -771,7 +789,7 @@ function Home() {
           </div>
           <div className="w-full px-8 py-11 bg-[#242d32] border-t border-[#767f84] flex-col justify-start items-center gap-[43px] inline-flex">
             <div className="flex-col justify-start items-center gap-[21px] flex">
-              <div className="max-w-[343px] text-center text-white text-6xl font-medium font-roboto leading-[93px]">The problem</div>
+              <div className="max-w-[343px] text-center text-white text-[55px] font-medium font-roboto leading-[93px] uppercase">The problem</div>
               <div className="text-white text-2xl font-medium font-roboto capitalize leading-loose">And how we can solve it</div>
             </div>
             <div className="self-stretch flex-col justify-start items-center gap-[19px] flex">
