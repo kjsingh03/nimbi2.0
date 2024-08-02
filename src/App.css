@@ -1,0 +1,406 @@
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url(./assets/RobotoCondensed.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+body {
+  background-color: #242d32;
+  color: #e6f7fd;
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+}
+
+nav a.active {
+  background-color: #3a4247;
+  color: #54c7ee;
+}
+
+.btn {
+  display: flex;
+  width: 178px;
+  padding: 10px 14px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  background: var(--Foundation-Blue-blue-400, #33BDEB);
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(255, 255, 255, 0.46) inset, 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  /* 150% */
+}
+
+.btn1 {
+  width: max-content;
+  text-align: center;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #334047;
+}
+
+.btn1:hover {
+  background-color: #00ACE6;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background-color: #242d32;
+  border: 1px solid #c4c0c8;
+  box-shadow: none;
+}
+
+.navbar {
+  transform: translateX(-100%);
+  transition: all ease 0.3s;
+}
+
+.navbar.active {
+  transform: translateX(0);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #0000006d;
+  padding: 1rem 1rem;
+  display: none;
+}
+
+.carousel:hover .swiper-button-next::after,
+.carousel:hover .swiper-button-prev::after {
+  display: block;
+}
+
+.swiper-pagination {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  padding: 3rem .5rem;
+}
+
+.swiper-slide {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.1;
+  transition: opacity 0.3s ease-in;
+}
+
+.phases {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  /* margin: auto; */
+  /* overflow: hidden; */
+  padding-left: 2rem;
+}
+
+.whale {
+  background-position: 40rem 25rem;
+  background-size: 55rem 45rem;
+}
+
+
+.accordion>p {
+  height: 0;
+  transform: translateY(5rem);
+}
+
+.accordion.active>p {
+  height: 100%;
+  transition: all 0.2s ease;
+  transform: translateY(0);
+}
+
+.accordion img {
+  rotate: 0deg;
+  transition: all 0.3s ease;
+}
+
+.accordion.active img {
+  rotate: 90deg;
+  transition: all 0.3s ease;
+}
+
+.document {
+  cursor: pointer;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.05rem;
+  font-family: 'Roboto';
+}
+
+.document:hover {
+  background-color: #28343b;
+}
+
+.document.active {
+  background-color: #28343b;
+}
+
+.docHead {
+  background-color: transparent;
+}
+
+.docHead.active {
+  background-color: #28343b;
+}
+
+.docTitle {
+  gap: 0rem
+}
+
+.docTitle.active {
+  gap: 0.5rem
+}
+
+.docContent {
+  height: 0;
+  display: none;
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+.docContent.active {
+  display: flex;
+  height: auto;
+  transform: translateY(0rem);
+  opacity: 100;
+}
+
+.team.active {
+  width: 60vw;
+  height: 80vh;
+}
+
+.modal {
+  display: none
+}
+
+.modal.active {
+  display: flex;
+}
+
+.fade-in {
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: .2;
+  }
+
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .wolfMask {
+    background-size: 48rem 72rem;
+    background-position: center 6rem;
+  }
+
+  .container {
+    padding-left: 33vw;
+  }
+
+  .phase {
+    width: 24.25vw;
+    gap: 4rem
+  }
+
+  .navbar {
+    transform: translateX(-100%);
+  }
+
+  .navbar.active {
+    transform: translateX(-100%);
+  }
+
+  .about {
+    background-position: right 3rem, bottom left;
+    background-size: auto, 160rem;
+  }
+
+  .team {
+    background-position: right 3rem, bottom left, -16rem 40rem;
+    background-size: auto, 160rem;
+  }
+}
+
+@media screen and (max-width:1280px) {
+
+  .phase {
+    width: 32vw;
+    gap: 3rem
+  }
+
+  .container {
+    padding-left: 8vw;
+  }
+
+  .wolfMask {
+    background-size: 45rem 77rem;
+    background-position: center top;
+  }
+
+  .swiper-pagination {
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media screen and (max-width:1164px) {
+  .navbar {
+    transform: translateX(-100%);
+  }
+
+  .navbar.active {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width:1024px) {
+
+  .swiper-pagination {
+    padding: 2rem 2.5rem;
+  }
+
+  .phase {
+    width: 48vw;
+  }
+
+  .container {
+    padding-left: 3rem;
+  }
+
+  .about {
+    background-position: -5rem 3rem, bottom left;
+    background-size: fill, fill;
+  }
+
+  .team {
+    background-position: 4rem 3rem, bottom left, -9rem 70rem;
+    background-size: auto, fill;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .swiper-pagination {
+    padding: 1.2rem 2.5rem;
+  }
+
+  .phase {
+    width: 100vw;
+    flex-direction: column-reverse;
+    gap: 0rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 4rem
+  }
+}
+
+@media screen and (max-width:640px) {
+  .swiper-pagination {
+    padding: 0.5rem 2.5rem;
+  }
+}
+
+@media screen and (max-width:475px) {
+  .swiper-pagination {
+    padding: 1.25rem 1.15rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+  }
+
+
+}
+
+@media (width<475px) {
+  .btn {
+    width: unset;
+    min-width: 100%;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+  background-color: #2e2e2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #334047;
+  border-radius: 6px;
+  border: 3px solid #2f2f2f;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1c2327;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0%;
+  z-index: 500;
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
