@@ -471,7 +471,7 @@ function Home() {
                 <div className="justify-start items-center xl:flex-row flex-col flex">
                   <div className="justify-start items-center relative top-[60px] xs:top-[92px] xl:top-[unset] flex xl:flex-row flex-col">
                     <div className="xl:max-w-[395px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                      <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
+                      <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
                         <div className=" pr-6 justify-start items-center gap-[21px] flex">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
@@ -487,7 +487,7 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
                         <div className="pr-6 justify-start items-center gap-[21px] flex">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
@@ -503,7 +503,7 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
                         </div>
                       </div>
-                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
                         <div className="pr-6 justify-start items-center gap-[21px] flex">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
@@ -566,7 +566,7 @@ function Home() {
                       </svg>
                     </div>
                     <div className="xl:w-[379px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                      <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                      <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
                         <div className=" xs:pr-6 justify-start items-center gap-[21px] flex">
 
                           <div className="grow shrink basis-0 flex-col w-full xs:justify-center items-start inline-flex">
@@ -582,7 +582,7 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">3,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
                         <div className="xs:pr-6 justify-start items-center gap-[21px] flex">
 
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
@@ -598,7 +598,7 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
                         <div className="xs:pr-6 justify-start items-center gap-[21px] flex">
 
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
