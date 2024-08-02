@@ -26,9 +26,9 @@ function Home() {
     else if (width > 768) { xPercent = -100 * (sections.length - 2); sectionStart = 12.5 }
 
     if (width > 1280) {
-      gsap.to('.collectionLeft', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionLeft', start: width >= 1720 ? "bottom 82%" : "bottom 94%", end: "top -300%", scrub: true } })
-      gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87%", end: "top -150%", scrub: true } })
-      gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87.5%", end: "top -300%", scrub: true } })
+      gsap.to('.collectionLeft', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionLeft', start: width >= 1720 ? "bottom 82%" : "bottom 87.5%", end: "top -300%", scrub: true } })
+      gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 77%", end: "top -150%", scrub: true } })
+      gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 77.5%", end: "top -300%", scrub: true } })
     }
 
     if (width > 768) {
@@ -393,11 +393,7 @@ function Home() {
               </div>
               <div className="self-stretch flex-col justify-start items-start gap-[19px] flex">
                 <div className="max-w-[603px] text-[#ebeced] text-sm font-normal font-['Roboto'] leading-normal">And your new best friend. $KAZI lets you transform your otherwise wasted leftover crypto dust into $KAZI token which you can stake for more coins, play the lottery, and access dApps that give you the power to shape the community.<br /><br />Convert $KAZI to $NIMBI to gain access to exclusive digital art NFTs and in-game assets to set you apart from the rest of the pack. $KAZI token gives you access to all of Nimbi’s decentralized features letting you earn tokens. Play the Crypto Lottery with your $KAZI to win big. <br /><br />Members can also use their tokens to vote on community initiatives like donating to worthy causes through DAOs. Built on the ERC-20 framework.</div>
-                <div className="xs:w-[178px] w-full grow shrink basis-0 px-3.5 py-2.5 bg-gradient-to-br from-[#d9cb00] to-[#ff8717] rounded justify-center items-start gap-2.5 inline-flex">
-                  <div className="px-1 justify-start items-start gap-2.5 flex">
-                    <div className="text-center text-white text-base font-medium font-['Inter'] leading-normal">Buy $KAZI</div>
-                  </div>
-                </div>
+                <div className="btn2">Buy $KAZI</div>
               </div>
             </div>
           </div>

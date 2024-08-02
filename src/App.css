@@ -55,6 +55,26 @@ nav a.active {
   border: 1px solid #334047;
 }
 
+.btn2{
+  background: linear-gradient(to right,#d9cb00,#ff8717);
+  display: flex;
+  width: 178px;
+  padding: 10px 14px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
 .btn1:hover {
   background-color: #00ACE6;
   border: 1px solid transparent;
@@ -62,6 +82,12 @@ nav a.active {
 
 .btn:hover {
   background-color: #242d32;
+  border: 1px solid #c4c0c8;
+  box-shadow: none;
+}
+
+.btn2:hover {
+  background: #242d32;
   border: 1px solid #c4c0c8;
   box-shadow: none;
 }

@@ -72,7 +72,7 @@ export default function Navbar() {
                 <div className="lg:w-[10%] py-0 xl:py-4 flex items-center gap-2.5">
                     <button onClick={activateNavbar} id="navbar-toggler" className="block xl:hidden text-xl py-[0.9rem] text-white"  >☰</button>
                     <div onClick={() => { document.querySelector("nav .active").classList.remove('active'); document.querySelector(`#home`).classList.add('active'); navigate("/") }}>
-                        <div className="w-[43.38px] h-[2.5rem]">
+                        <div className="w-[43.38px] h-[2.5rem] cursor-pointer">
                             <img src={logo} className="w-full h-full object-fill" alt="" />
                         </div>
                         {/* <div className="block md:hidden w-8 h-8">
