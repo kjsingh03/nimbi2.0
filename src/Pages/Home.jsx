@@ -465,7 +465,7 @@ function Home() {
 
         {/* Token Allocation Section Start */}
         <div className="flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
-          <img src={tokenDolphin} alt="tokenDolphin" className="absolute z-[1] lg:w-auto w-[70%] right-0 lg:bottom-0 bottom-[200px]" />
+       {/*   <img src={tokenDolphin} alt="tokenDolphin" className="absolute z-[1] lg:w-auto w-[70%] right-0 lg:bottom-0 bottom-[200px]" /> */}
           <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
             <div className="collectionLeft self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
               <div className="flex-col justify-start items-center gap-5 flex">
