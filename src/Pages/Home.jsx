@@ -436,7 +436,7 @@ function Home() {
         <div className="overflow-x-hidden z-20">
 
           {/* Token Allocation Section Start */}
-          <div className="z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
+          <div className="-z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
             <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
               <div className=" self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
                 <div className="flex-col justify-start items-center gap-5 flex">
@@ -629,7 +629,7 @@ function Home() {
 
           {/* Animation Section Start */}
 
-          {/* <div className="roadmap-container -z-50 bg-[url(./assets/bigEllipse.png)] sm:bg-[_33rem_33rem] bg-[50rem_1rem] sm:bg-[152vw_6rem] xl:bg-[72vw_6rem] 3xl:bg-[77vw_6rem] bg-no-repeat flex flex-col sm:gap-0 mt-16 pt-0 md:pt-[6rem] lg:pt-0 xl:mt-[5rem]">
+          <div className="roadmap-container -z-50 bg-[url(./assets/bigEllipse.png)] sm:bg-[_33rem_33rem] bg-[50rem_1rem] sm:bg-[152vw_6rem] xl:bg-[72vw_6rem] 3xl:bg-[77vw_6rem] bg-no-repeat flex flex-col sm:gap-0 mt-16 pt-0 md:pt-[6rem] lg:pt-0 xl:mt-[5rem]">
             <div className="lg:block hidden border-t -translate-x-[55%] relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
               <img src={whaleLeft} className='whaleLeft absolute top-[303rem] lg:-top-[35.5rem] -right-[70rem] lg:-right-[53rem] 3xl:-right-[65rem] -z-50' alt="" />
             </div>
@@ -664,7 +664,7 @@ function Home() {
                 <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2026" />
               </div>
             </div>
-          </div> */}
+          </div>
 
           {/* Animation Section End */}
         </div>
