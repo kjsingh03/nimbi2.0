@@ -24,11 +24,11 @@ function Home() {
     else if (width >= 1024) { xPercent = -100 * (sections.length - 3); sectionStart = 12.5 }
     else if (width > 768) { xPercent = -100 * (sections.length - 2); sectionStart = 12.5 }
 
-      // if (width > 1280) {
-      //   gsap.to('.collectionLeft', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionLeft', start: width >= 1720 ? "bottom 82%" : "bottom 99.5%", end: "top -300%", scrub: true } })
-      //   gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87%", end: "top -150%", scrub: true } })
-      //   gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87.5%", end: "top -300%", scrub: true } })
-      // }
+    if (width > 1280) {
+      gsap.to('.collectionLeft', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionLeft', start: width >= 1720 ? "bottom 82%" : "bottom 94%", end: "top -300%", scrub: true } })
+      gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87%", end: "top -150%", scrub: true } })
+      gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 87.5%", end: "top -300%", scrub: true } })
+    }
 
     if (width > 768) {
 
@@ -153,13 +153,12 @@ function Home() {
             </div>
           </div>
         </div>
+
         <div className="flex md:flex-row flex-col items-center justify-center border-t border-b border-[#767f84] bg-[#1c2327]">
           <IntroCard title="Play" desc="Earn crypto dust playing games online with other Wolfpack members. Unlock daily rewards and compete for the top leaderboard spots to win bonus rewards. " img={play} />
           <IntroCard title="Collect" desc="Build your personal wolfpack with a unique NFT art collection featuring man’s best friend. Gain exclusive assets to upgrade your in-game experience." img={collect} />
           <IntroCard title="Profit" desc="What separates $NIMBI and $KAZI from meme coins? A dual-token system with robust fundamentals. With many ways to earn dust and convert into tokens, NIMBI and KAZI " img={profit} />
         </div>
-
-
 
         {/* Our Ethos Section Start */}
         <div className="w-screen h-auto bg-[#A1A7AA] relative flex justify-center overflow-hidden">
@@ -203,12 +202,12 @@ function Home() {
         <div className="w-screen overflow-hidden bg-[#1C2327]">
           <div className="w-[90%] lg:w-[80%] 4xl:w-[1506px] mx-auto py-[5rem] xl:pt-[9rem] h-fit z-0">
             <div className="collectiontop relative mb-8 3xl:mb-6">
-              <div className="bg-[#5c666c] w-max font-semibold py-[5px] px-[10px] z-10 text-sm 3xl:text-lg"><p>Collection</p></div>
-              <img src={ellipse} className='absolute -top-6 3xl:-top-8 left-[3.5rem] w-[4.875rem] 3xl:w-[6.375rem] -z-0' alt="" />
+              <div className="bg-[#5c666c] w-max font-semibold py-[5px] px-[10px] z-10 text-sm 3xl:text-lg"><p>NFT Collection</p></div>
+              <img src={ellipse} className='absolute -top-6 3xl:-top-8 left-[4.75rem] w-[4.875rem] 3xl:w-[6.375rem] -z-0' alt="" />
             </div>
 
             <div className="flex xl:flex-row flex-col justify-between relative gap-10 xl:gap-0 pt-[11px]">
-              <div className="flex flex-col h-auto w-full xl:w-[40%] 2xl:w-[580px]">
+              <div className="collectionLeft flex flex-col h-auto w-full xl:w-[40%] 2xl:w-[580px]">
                 <div className="flex flex-col gap-[38px] ">
                   <div className="text-[3.25rem] md:text-[4.2rem] 2xl:text-[5rem] 3xl:text-[5rem] font-['Roboto_Condensed'] leading-tight 3xl:leading-[6.5rem] tracking-[0.25px] font-bold uppercase text-[#5c666c]">build your  Wolfpack</div>
                   <p className="text-2xl font-medium font-['Roboto_Condensed',sans-serif]">10,000 unique collectible wolves strong. </p>
@@ -220,7 +219,7 @@ function Home() {
                   <p className='btn w-fit text-sm text-center rounded-[4px] py-2.5 px-[14px]'>Explore the wolves</p>
                 </div>
               </div>
-              <div className="grid md:grid-cols-3 xs:grid-cols-2 justify-center gap-5 py-6 xl:py-0 w-full xl:w-[60%] h-fit z-0">
+              <div className="collectionRight grid md:grid-cols-3 xs:grid-cols-2 justify-center gap-5 py-6 xl:py-0 w-full xl:w-[60%] h-fit z-0">
                 <NFTCard img={author1} clas="sm:opacity-0" icon={eth_white} />
                 <NFTCard img={author1} icon={eth_white} />
                 <NFTCard img={author2} icon={eth_white} />
@@ -275,7 +274,7 @@ function Home() {
             <div className="h-auto justify-start lg:flex-row flex-col-reverse items-center gap-6 inline-flex">
               <div className="lg:max-w-[647px] flex-col justify-center items-start inline-flex">
                 <div className="self-stretch flex-col justify-start items-center gap-[33px] flex">
-                  <div className="self-stretch text-[#a1a7aa] text-[60px] sm:text-[80px] font-medium font-roboto sm:leading-[80px] leading-normal">Crypto Dust Converter</div>
+                  <div className="text-[3.25rem] md:text-[4.2rem] 2xl:text-[5rem] 3xl:text-[5rem] font-['Roboto_Condensed'] leading-tight 3xl:leading-[6.5rem] tracking-[0.25px] font-bold uppercase text-[#a1a7aa]">crypto dust converter</div>
                   <div className="self-stretch text-white text-2xl font-medium font-['Roboto'] capitalize leading-normal">The blockchain’s trash, your treasure </div>
                 </div>
                 <br />
@@ -298,7 +297,7 @@ function Home() {
               <img className="lg:max-w-[438px] aspect-[506/557]" src={mobile1} alt='Mobile Image' />
               <div className="lg:max-w-[730px] w-full flex-col justify-start items-start gap-6 inline-flex">
                 <div className="flex-col justify-start items-start gap-[21px] flex">
-                  <div className="self-stretch text-[#a1a7aa] text-[60px] sm:text-[80px] font-medium font-roboto sm:leading-[93px] leading-normal">De-fi Lottery</div>
+                  <div className="text-[3.25rem] md:text-[4.2rem] 2xl:text-[5rem] 3xl:text-[5rem] font-['Roboto_Condensed'] leading-tight 3xl:leading-[6.5rem] tracking-[0.25px] font-bold uppercase text-[#a1a7aa]">de-fi lottery</div>
                   <div className="max-w-[665px] text-white text-2xl font-medium font-roboto capitalize leading-loose">Convert crypto dust. Earn $KAZI. Win big. </div>
                 </div>
                 <div className="h-[72px] flex-col justify-start items-start gap-[19px] flex">
@@ -311,43 +310,15 @@ function Home() {
         </div>
         {/* DE-FI Lottery Section End */}
 
-
-        {/* <div className="bg-[url(./assets/wolfMask.png)] wolfMask bg-no-repeat xl:h-[954px] overflow-hidden">
-          <div className="flex mx-auto w-[90%] lg:w-[80%] 4xl:w-[1502px] justify-between 2xl:flex-row gap-6 3xl:gap-[0px] flex-col pt-8">
-            <div className="flex flex-col gap-8 w-full 2xl:w-[725px]">
-              <div className="relative">
-                <div className="btn bg-[#5c666c] w-max font-semibold text-sm 3xl:text-lg py-[5px] px-[10px]">Supporting dapps</div>
-                <img src={ellipse} className='absolute -top-8 left-[6rem] 3xl:left-[8rem] w-[6.375rem]' alt="" />
-              </div>
-              <p className="text-[#a1a7aa] text-[2.5rem] xxs:text-5xl xl:text-[4.5rem] font-['Roboto_Condensed'] leading-[3rem] xxs:leading-[3.5rem] md:leading-[5rem] 2xl:leading-[5.5rem] tracking-[0.25px] font-bold uppercase pt-6 2xl:pt-0">NIMBI The Leader of the Pack</p>
-            </div>
-            <p className='md:w-[90% 2xl:w-[45%] font-["Roboto"] leading-6 text-base'>Nimbi, a character with dual existences. In one he is a central figure in the associated Web3 video game Crypto Dust Runner and an artistic representation in the NFT Nimbi Art Collection. The ERC-404 Nimbi Token also bears his name, enhancing his integral role within the ecosystem. In this capacity Nimbi is on a quest to gather members for his Wolfpack, leading them on adventures across the virtual landscape.
-              In the other, Nimbi is Mr. Nimbus—a two-year-old White Wolf rescued as a puppy from a reservation. Known as a Res-Wolf Dog, Nimbi's early life on the reservation introduced him to the harsh realities and the concept of "Crypto Dust," a metaphor for the scraps and remnants he survived on. Now thriving in the Rocky Mountains, he embodies resilience and leadership, characteristics that translate into his digital persona where he guides players to the apex of mountains and beyond in Crypto Dust Runner.</p>
-          </div>
-          <div className="border-b border-[#767f84] my-16 md:my-[68px] 3xl:my-[100px]">
-          </div>
-          <div className="flex 2xl:flex-row flex-col-reverse gap-4 2xl:gap-[77px] mx-auto w-[90%] lg:w-[80%] 4xl:w-[1502px] 2xl:text-left items-center justify-between">
-            <p className='md:w-[90% 2xl:w-[45%] font-["Roboto"] leading-6 text-base'>As the name suggests, Crypto Dust Lotto introduces a new approach to traditional lotteries. Players can purchase lottery tickets with Kazi Tokens, promoting accessibility and making it easy for borderless participation. Players are protected by the transparent and immutable smart contracts that govern the lottery process, ensuring fair and tamper-proof draws.
-
-              What sets Crypto Dust Lotto apart is its integration with the broader Nimbi ecosystem, allowing winners to (beyond prizes) level up and become part of the Nimbi VIP program, which has its own special VIP perks. </p>
-            <div className="2xl:w-[45%] flex flex-col gap-6 md:gap-0">
-              <p className="text-[#a1a7aa] text-[2.5rem] xxs:text-5xl md:text-[4.5rem] font-['Roboto_Condensed'] leading-[3rem] xxs:leading-[3.5rem] md:leading-[5rem] 2xl:leading-[5.5rem] tracking-[0.25px] font-bold uppercase pb-4">Open-Source Decentralized Lottery</p>
-              <p className="text-2xl font-['Roboto_Condensed'] font-medium text-white 2xl:pb-0 pb-8">Introducing Crypto Lotto, the web 3 Dapp that puts all those centralized lotto's to shame</p>
-            </div>
-          </div>
-          <div className="xs:border-b -translate-x-[25%] pb-16 xs:pb-[7rem] xl:pb-[6.5rem] 3xl:pb-[7rem]">
-          </div>
-        </div> */}
-
         {/* Earn Tokens Section Start */}
-        <div className="h-[105rem] xxs:h-[92rem] xs:h-[100rem] sm:h-[108rem] relative md:h-auto">
+        <div className="h-[105rem] xxs:h-[92rem] xs:h-[100rem] sm:h-[108rem] relative md:h-auto bg-[#242D32]">
 
-          <div className="flex flex-col justify-end items-center md:justify-center bg-[url(./assets/msec3.png)] xs:bg-[url(./assets/tsec3.png)] md:bg-[url(./assets/sec3.png)] w-[full] bg-transparent h-full lg:h-[70vw] 2xl:h-[53.25vw] lg:bg-center bg-top xs:bg-right bg-no-repeat bg-cover 2xl:bg-contain sm:pb-[4rem] md:pb-0">
+          <div className="flex flex-col justify-end items-start md:justify-center bg-[url(./assets/msec3.png)] xs:bg-[url(./assets/tsec3.png)] md:bg-[url(./assets/sec3.png)] w-[full] bg-transparent h-full lg:h-[70vw] 2xl:h-[48.25vw] lg:bg-center bg-top xs:bg-right bg-no-repeat bg-cover 2xl:bg-contain sm:pb-[4rem] md:pb-0">
             <div className="w-full md:w-[80%] mx-auto ">
-              <div className="pb-[6rem] xxs:pb-[5rem] xs:pb-[7rem] sm:pb-[4.5rem] md:pt-[96px] px-4 xxs:px-4 sm:px-10 md:px-0 flex flex-col md:w-[75%] xl:w-[65%] 3xl:w-[50%] gap-6 xl:gap-9 items-center md:items-start justify-around lg:justify-center text-[#151b1e] md:max-w-[588px] xl:max-w-[unset]">
+              <div className="pb-[6rem] xxs:pb-[5rem] xs:pb-[7rem] sm:pb-[4.5rem] 2xl:pb-[0.5rem] 3xl:pb-[4.5rem] md:pt-[96px] px-4 xxs:px-4 sm:px-10 md:px-0 flex flex-col md:w-[75%] xl:w-[65%] 3xl:w-[50%] gap-6 xl:gap-9 items-center md:items-start justify-around lg:justify-center text-[#151b1e] md:max-w-[588px] xl:max-w-[unset]">
                 <div className="">
                   <p className="sm:text-[84px] text-[60px] leading-normal font-bold uppercase sm:leading-[85px] font-['Roboto_Condensed',sans-serif] xl:w-[80%] 3xl:w-full">Earn Tokens by playing</p>
-                  <p className='text-2xl pt-[21px] font-semibold tracking-tighter w-full xl:w-[60%] 2xl:w-[70%] 3xl:w-[85%]'>In the DeFi industry, crypto dust refers to small amounts of cryptocurrency either left over from transactions, or valueless remaining assets.</p>
+                  <p className='text-2xl pt-[21px] font-semibold tracking-tighter w-full xl:w-[60%] 2xl:w-[70%] 3xl:w-[85%]'>Ready to lead the pack against the corporate whales?</p>
                 </div>
                 <p className='text-base font-medium block w-full xl:w-[70%] 3xl:w-[90%]'>
                   Crypto Dust Runner is a play-to-earn multiplayer game putting you on a quest to gather crypto dust for your wallet with your wolfpack. Follow Nimbi as he guides you through a pristine landscape with the ultimate goal of uniting all the wolves.
@@ -415,9 +386,9 @@ function Home() {
         </div>
         {/* Dual Tokens Section End */}
 
-        <div className="py-[112px] xs:px-[69px] px-4 flex justify-center relative overflow-hidden max-w-screen bg-[#1C2327]">
+        <div className="py-[112px] flex justify-center relative overflow-hidden max-w-screen bg-[#1C2327]">
           <img src={dog_shade} alt="dog_shade" className="absolute z-[1] w-[562px] xl:right-[44px] right-[unset] left-0 xl:left-[unset] xl:top-[80px] top-[447px]" />
-          <div className="grid max-w-[1494px] gap-[76px] grid-cols-1 relative z-[10]">
+          <div className="w-[90%] xlg:w-[80%] 4xl:w-full mx-auto grid max-w-[1494px] gap-[76px] grid-cols-1 relative z-[10]">
             <div className="grid lg:grid-cols-2 grid-cols-1 grid-rows-[auto]  gap-[76px]">
               <div className="flex flex-col gap-[24px] ">
                 <div className="flex flex-col gap-[20px] ">
@@ -462,205 +433,203 @@ function Home() {
           </div>
         </div>
 
+        <div className="overflow-x-hidden z-20">
 
-        {/* Token Allocation Section Start */}
-        <div className="flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
-       {/*   <img src={tokenDolphin} alt="tokenDolphin" className="absolute z-[1] lg:w-auto w-[70%] right-0 lg:bottom-0 bottom-[200px]" /> */}
-          <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
-            <div className="collectionLeft self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
-              <div className="flex-col justify-start items-center gap-5 flex">
-                <div className="justify-start h-[102px] items-center inline-flex relative">
-                  <div className="relative z-[10]  px-2.5 py-[5px] bg-[#5c666c] justify-center items-center gap-2.5 flex">
-                    <div className="text-center text-white text-lg font-bold font-['Inter'] leading-7">Tokenomics</div>
+          {/* Token Allocation Section Start */}
+          <div className="z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
+            <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
+              <div className=" self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
+                <div className="flex-col justify-start items-center gap-5 flex">
+                  <div className="justify-start h-[102px] items-center inline-flex relative">
+                    <div className="relative z-[10]  px-2.5 py-[5px] bg-[#5c666c] justify-center items-center gap-2.5 flex">
+                      <div className="text-center text-white text-lg font-bold font-['Inter'] leading-7">Tokenomics</div>
+                    </div>
+                    <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
+                      <img src={ellipse} alt="Ellipse" />
+                    </div>
                   </div>
-                  <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
-                    <img src={ellipse} alt="Ellipse" />
+                  <div className="self-stretch flex-col justify-start items-center gap-[33px] flex">
+                    <div className="text-[#a1a7aa] text-center sm:text-[80px] text-[60px] font-medium font-roboto sm:leading-[80px] leading-normal">TOKEN ALLOCAT<span className="xs:hidden block"> </span>ION</div>
+                    <div className="max-w-[665px] text-center text-white text-2xl font-medium font-roboto capitalize leading-loose">In Dust We Trust</div>
+                  </div>
+                  <div className="max-w-[705px] text-center text-[#ebeced] text-base font-normal font-['Roboto'] capitalize leading-normal">$NIMBI is an ecosystem for decentralized-minded people. We reward our members first, not Wall Street. Loyal Wolfpack members get airdrops for being early supporters and earn tokens playing Crypto Dust Runner,  completing daily quests and finishing at the top of the leaderboard. </div>
+                </div>
+                <div className="justify-start items-center xl:flex-row flex-col inline-flex">
+                  <div className="justify-start items-center relative top-[60px] xs:top-[80px] xl:top-[unset] xl:left-[60px] flex xl:flex-row flex-col">
+                    <div className="xl:max-w-[395px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
+                      <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
+                        <div className="  justify-start items-center gap-[21px] flex">
+                          <div className="self-stretch justify-start items-center gap-2.5 flex" />
+                          <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Rewards Staking/Airdrops</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
+                        </div>
+                      </div>
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                        <div className=" justify-start items-center gap-[21px] flex">
+                          <div className="self-stretch justify-start items-center gap-2.5 flex" />
+                          <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Marketing</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col flex-row justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
+                        </div>
+                      </div>
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                        <div className=" justify-start items-center gap-[21px] flex">
+                          <div className="self-stretch justify-start items-center gap-2.5 flex" />
+                          <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Team</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">reward the community with airdrops for early support.</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col flex-row justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="xs:max-w-[395px] max-w-[255px] min-h[316px] flex-col justify-center items-start gap-2.5 hidden xl:inline-flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
+                        <path d="M107 0.816406C69 33.3164 25.3333 36.4621 0.5 37.8164V111.816H52.5C62.9 48.4337 89.5 19.2138 107 0.816406Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="51" height="75" viewBox="0 0 51 75" fill="none">
+                        <path d="M50.5 0.816406H0.5V74.8164H50.5C45.5 56.8164 46.5 17.8164 50.5 0.816406Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
+                        <path d="M106.5 111.816C68.6784 79.3164 25.2167 76.1707 0.5 74.8164V0.816406H52.2559C62.607 64.1991 89.0822 93.419 106.5 111.816Z" fill="#2D353A" />
+                      </svg>
+                    </div>
+                    <div className="xs:max-w-[395px] max-w-[255px] min-h[316px] xl:hidden flex-row justify-center items-start gap-2.5 inline-flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xs:block hidden" height="104" viewBox="0 0 389 104" fill="none">
+                        <path d="M22 -3.20404e-05C22 40.5 15.5 67.5 -0.000305176 103.5C52.5 42.5 119 11.9481 195.5 11.9481C281.585 12.8047 342.5 47.5 388.5 103.5C378.5 82.5 366.667 25.8333 367 -1.87959e-06L22 -3.20404e-05Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xs:hidden" width="256" height="68" viewBox="0 0 256 68" fill="none">
+                        <path d="M14.7754 2.47097e-05C14.7754 26.6087 10.9239 44.3478 0.75 68C35.2096 27.9227 78.8583 7.84997 129.071 7.84997C185.574 8.41276 225.557 31.2077 255.75 68C249.186 54.2029 240.775 26 240.775 2.15791e-05L14.7754 2.47097e-05Z" fill="#2D353A" />
+                      </svg>
+                    </div>
+                    <div className="relative">
+                    </div>
+                  </div>
+                  <img src={circle_graph} alt="circle_graph" className="max-w-[488px] w-[100%]" />
+                  <div className="justify-start items-center relative bottom-[60px] xs:bottom-[80px] xl:bottom-[unset] xl:right-[60px] flex xl:flex-row flex-col">
+                    <div className="max-w-[395px] min-h[316px] flex-col justify-center items-end gap-2.5 hidden xl:inline-flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
+                        <path d="M0.5 0.816397C38.3216 33.3164 81.7833 36.4621 106.5 37.8164L106.5 111.816L54.7441 111.816C44.393 48.4337 17.9178 19.2138 0.5 0.816397Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="51" height="75" viewBox="0 0 51 75" fill="none">
+                        <path d="M0.5 74.8164L50.5 74.8164L50.5 0.816406L0.500006 0.816402C5.5 18.8164 4.5 57.8164 0.5 74.8164Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
+                        <path d="M0 111.816C38 79.3164 81.6667 76.1707 106.5 74.8164L106.5 0.816406L54.5 0.816402C44.1 64.1991 17.5 93.419 0 111.816Z" fill="#2D353A" />
+                      </svg>
+                    </div>
+                    <div className="max-w-[395px] min-h[316px] xl:hidden flex-row justify-center items-start gap-2.5 inline-flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xs:block hidden" width="389" height="104" viewBox="0 0 389 104" fill="none">
+                        <path d="M367 104C367 63.5 373.5 36.5 389 0.5C336.5 61.5 270 92.0519 193.5 92.0519C107.415 91.1953 46.5 56.5 0.5 0.5C10.5 21.5 22.3333 78.1667 22 104H367Z" fill="#2D353A" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xs:hidden" width="256" height="68" viewBox="0 0 256 68" fill="none">
+                        <path d="M240.775 68C240.775 41.3913 245.601 23.6522 255.775 0C221.316 40.0773 177.667 60.15 127.455 60.15C70.9514 59.5873 30.9684 36.7923 0.775391 0C7.33909 13.7971 14.7754 43 14.7754 68H240.775Z" fill="#2D353A" />
+                      </svg>
+                    </div>
+                    <div className="xl:max-w-[379px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
+                      <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
+                        <div className=" justify-start items-center gap-[21px] flex">
+
+                          <div className="grow shrink basis-0 flex-col w-full xs:justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">35%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Presale</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-4"> nimbi token will be sold to public (1,000-3,500 wallet holders)</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">3,500N</div>
+                        </div>
+                      </div>
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
+                        <div className="justify-start items-center gap-[21px] flex">
+
+                          <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Private Investors</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-4">Reward the community with airdrops for early support.</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
+                        </div>
+                      </div>
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
+                        <div className="justify-start items-center gap-[21px] flex">
+
+                          <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
+                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                              <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
+                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Exchange Listing</div>
+                            </div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-4">Reward the community with airdrops for early support.</div>
+                          </div>
+                        </div>
+                        <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
+                          <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                    </div>
                   </div>
                 </div>
-                <div className="self-stretch flex-col justify-start items-center gap-[33px] flex">
-                  <div className="text-[#a1a7aa] text-center sm:text-[80px] text-[60px] font-medium font-roboto sm:leading-[80px] leading-normal">TOKEN ALLOCAT<span className="xs:hidden block"> </span>ION</div>
-                  <div className="max-w-[665px] text-center text-white text-2xl font-medium font-roboto capitalize leading-loose">In Dust We Trust</div>
+              </div>
+              <div className=" grid lg:pt-[56px] w-full gap-y-[100px] lg:grid-cols-4 sm:grid-cols-2">
+                <div className="">
+                  <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$NIMBI</div>
+                  <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Ticker</div>
                 </div>
-                <div className="max-w-[705px] text-center text-[#ebeced] text-base font-normal font-['Roboto'] capitalize leading-normal">$NIMBI is an ecosystem for decentralized-minded people. We reward our members first, not Wall Street. Loyal Wolfpack members get airdrops for being early supporters and earn tokens playing Crypto Dust Runner,  completing daily quests and finishing at the top of the leaderboard. </div>
-              </div>
-              <div className="justify-start items-center xl:flex-row flex-col inline-flex">
-                <div className="justify-start items-center relative top-[60px] xs:top-[80px] xl:top-[unset] xl:left-[60px] flex xl:flex-row flex-col">
-                  <div className="xl:max-w-[395px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                    <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
-                      <div className=" pr-6 justify-start items-center gap-[21px] flex">
-                        <div className="self-stretch justify-start items-center gap-2.5 flex" />
-                        <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Rewards Staking/Airdrops</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
-                      </div>
-                    </div>
-                    <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
-                      <div className="pr-6 justify-start items-center gap-[21px] flex">
-                        <div className="self-stretch justify-start items-center gap-2.5 flex" />
-                        <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Marketing</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col flex-row justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
-                      </div>
-                    </div>
-                    <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
-                      <div className="pr-6 justify-start items-center gap-[21px] flex">
-                        <div className="self-stretch justify-start items-center gap-2.5 flex" />
-                        <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Team</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">reward the community with airdrops for early support.</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col flex-row justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="xs:max-w-[395px] max-w-[255px] min-h[316px] flex-col justify-center items-start gap-2.5 hidden xl:inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
-                      <path d="M107 0.816406C69 33.3164 25.3333 36.4621 0.5 37.8164V111.816H52.5C62.9 48.4337 89.5 19.2138 107 0.816406Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="75" viewBox="0 0 51 75" fill="none">
-                      <path d="M50.5 0.816406H0.5V74.8164H50.5C45.5 56.8164 46.5 17.8164 50.5 0.816406Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
-                      <path d="M106.5 111.816C68.6784 79.3164 25.2167 76.1707 0.5 74.8164V0.816406H52.2559C62.607 64.1991 89.0822 93.419 106.5 111.816Z" fill="#2D353A" />
-                    </svg>
-                  </div>
-                  <div className="xs:max-w-[395px] max-w-[255px] min-h[316px] xl:hidden flex-row justify-center items-start gap-2.5 inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="xs:block hidden" height="104" viewBox="0 0 389 104" fill="none">
-                      <path d="M22 -3.20404e-05C22 40.5 15.5 67.5 -0.000305176 103.5C52.5 42.5 119 11.9481 195.5 11.9481C281.585 12.8047 342.5 47.5 388.5 103.5C378.5 82.5 366.667 25.8333 367 -1.87959e-06L22 -3.20404e-05Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="xs:hidden" width="256" height="68" viewBox="0 0 256 68" fill="none">
-                      <path d="M14.7754 2.47097e-05C14.7754 26.6087 10.9239 44.3478 0.75 68C35.2096 27.9227 78.8583 7.84997 129.071 7.84997C185.574 8.41276 225.557 31.2077 255.75 68C249.186 54.2029 240.775 26 240.775 2.15791e-05L14.7754 2.47097e-05Z" fill="#2D353A" />
-                    </svg>
-                  </div>
-                  <div className="relative">
-                  </div>
+                <div className="">
+                  <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$25M</div>
+                  <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Circulating Supply</div>
                 </div>
-                <img src={circle_graph} alt="circle_graph" className="max-w-[488px] w-[100%]" />
-                <div className="justify-start items-center relative bottom-[60px] xs:bottom-[80px] xl:bottom-[unset] xl:right-[60px] flex xl:flex-row flex-col">
-                  <div className="max-w-[395px] min-h[316px] flex-col justify-center items-end gap-2.5 hidden xl:inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
-                      <path d="M0.5 0.816397C38.3216 33.3164 81.7833 36.4621 106.5 37.8164L106.5 111.816L54.7441 111.816C44.393 48.4337 17.9178 19.2138 0.5 0.816397Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="75" viewBox="0 0 51 75" fill="none">
-                      <path d="M0.5 74.8164L50.5 74.8164L50.5 0.816406L0.500006 0.816402C5.5 18.8164 4.5 57.8164 0.5 74.8164Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="107" height="112" viewBox="0 0 107 112" fill="none">
-                      <path d="M0 111.816C38 79.3164 81.6667 76.1707 106.5 74.8164L106.5 0.816406L54.5 0.816402C44.1 64.1991 17.5 93.419 0 111.816Z" fill="#2D353A" />
-                    </svg>
-                  </div>
-                  <div className="max-w-[395px] min-h[316px] xl:hidden flex-row justify-center items-start gap-2.5 inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="xs:block hidden" width="389" height="104" viewBox="0 0 389 104" fill="none">
-                      <path d="M367 104C367 63.5 373.5 36.5 389 0.5C336.5 61.5 270 92.0519 193.5 92.0519C107.415 91.1953 46.5 56.5 0.5 0.5C10.5 21.5 22.3333 78.1667 22 104H367Z" fill="#2D353A" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="xs:hidden" width="256" height="68" viewBox="0 0 256 68" fill="none">
-                      <path d="M240.775 68C240.775 41.3913 245.601 23.6522 255.775 0C221.316 40.0773 177.667 60.15 127.455 60.15C70.9514 59.5873 30.9684 36.7923 0.775391 0C7.33909 13.7971 14.7754 43 14.7754 68H240.775Z" fill="#2D353A" />
-                    </svg>
-                  </div>
-                  <div className="xl:max-w-[379px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                    <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
-                      <div className=" xs:pr-6 justify-start items-center gap-[21px] flex">
-
-                        <div className="grow shrink basis-0 flex-col w-full xs:justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">35%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Presale</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none"> nimbi token will be sold to public (1,000-3,500 wallet holders)</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">3,500N</div>
-                      </div>
-                    </div>
-                    <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
-                      <div className="pr-6 justify-start items-center gap-[21px] flex">
-
-                        <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Private Investors</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">Reward the community with airdrops for early support.</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
-                      </div>
-                    </div>
-                    <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tl rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4">
-                      <div className="pr-6 justify-start items-center gap-[21px] flex">
-
-                        <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                          <div className="  justify-start items-center gap-[13px] inline-flex">
-                            <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                            <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Exchange Listing</div>
-                          </div>
-                          <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">Reward the community with airdrops for early support.</div>
-                        </div>
-                      </div>
-                      <div className="xs:flex-col justify-start items-end gap-[5px] inline-flex">
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] uppercase leading-tight">Tokens</div>
-                        <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="relative">
-                  </div>
+                <div className="">
+                  <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$300,000</div>
+                  <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Total Supply</div>
                 </div>
-              </div>
-            </div>
-            <div className="collectionRight grid lg:pt-[56px] w-full gap-y-[100px] lg:grid-cols-4 sm:grid-cols-2">
-              <div className="">
-                <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$NIMBI</div>
-                <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Ticker</div>
-              </div>
-              <div className="">
-                <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$25M</div>
-                <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Circulating Supply</div>
-              </div>
-              <div className="">
-                <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$300,000</div>
-                <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Total Supply</div>
-              </div>
-              <div className="">
-                <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">7K+</div>
-                <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Members</div>
+                <div className="">
+                  <div className="text-center text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">7K+</div>
+                  <div className="text-center text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Members</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Token Allocation Section End */}
+          {/* Token Allocation Section End */}
 
+          {/* Animation Section Start */}
 
-
-        {/* Animation Section Start */}
-        <div className="overflow-x-hidden z-20">
-          <div className="roadmap-container -z-50 bg-[url(./assets/bigEllipse.png)] sm:bg-[_33rem_33rem] bg-[50rem_1rem] sm:bg-[152vw_6rem] xl:bg-[72vw_6rem] 3xl:bg-[77vw_6rem] bg-no-repeat flex flex-col sm:gap-0 mt-16 pt-0 md:pt-[6rem] lg:pt-0 xl:mt-[5rem]">
+          {/* <div className="roadmap-container -z-50 bg-[url(./assets/bigEllipse.png)] sm:bg-[_33rem_33rem] bg-[50rem_1rem] sm:bg-[152vw_6rem] xl:bg-[72vw_6rem] 3xl:bg-[77vw_6rem] bg-no-repeat flex flex-col sm:gap-0 mt-16 pt-0 md:pt-[6rem] lg:pt-0 xl:mt-[5rem]">
             <div className="lg:block hidden border-t -translate-x-[55%] relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
               <img src={whaleLeft} className='whaleLeft absolute top-[303rem] lg:-top-[35.5rem] -right-[70rem] lg:-right-[53rem] 3xl:-right-[65rem] -z-50' alt="" />
             </div>
@@ -695,10 +664,10 @@ function Home() {
                 <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2026" />
               </div>
             </div>
-          </div>
-        </div>
-        {/* Animation Section End */}
+          </div> */}
 
+          {/* Animation Section End */}
+        </div>
 
         {/*  */}
         <div className="grid w-screen grid-cols-1 gap-[70px] sm:gap-[120px]">
@@ -784,7 +753,7 @@ function Home() {
               <div className="justify-center items-center inline-flex lg:flex-row flex-col">
                 <img className="w-[289px] h-[268px]" src={foxHead} alt="foxHead" />
                 <div className="flex-col justify-start items-start gap-[47px] inline-flex">
-                  <div className="text-[#a1a7aa] text-6xl font-medium font-roboto leading-[80px]">VIP Wolfpack for $NIMBI owners.</div>
+                  <div className="text-[#a1a7aa] text-[55px] font-medium font-roboto leading-[80px] uppercase">VIP Wolfpack for $NIMBI owners.</div>
                   <ul className="pl-4 text-white text-base font-normal font-['Roboto'] leading-[35px] list-disc list">
                     <li>
                       Private community with Devs, Alphas and team members.
