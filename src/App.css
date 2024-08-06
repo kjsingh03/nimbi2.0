@@ -55,15 +55,15 @@ nav a.active {
   border: 1px solid #334047;
 }
 
-.btn2{
-  background: linear-gradient(to right,#d9cb00,#ff8717);
+.btn2 {
   display: flex;
-  width: 178px;
   padding: 10px 14px;
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
   border-radius: 4px;
+  background: var(--Gold-Kazi, linear-gradient(135deg, #D9CB00 15.04%, #FF8717 85.36%));
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(255, 255, 255, 0.46) inset, 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: #FFF;
   text-align: center;
   font-family: Inter;
@@ -71,7 +71,6 @@ nav a.active {
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  border: 1px solid transparent;
   cursor: pointer;
 }
 
