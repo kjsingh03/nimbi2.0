@@ -742,7 +742,7 @@ function Home() {
                     </div>
                   </div>
                   <div className="w-full xs:w-full lg:w-[40%] flex flex-col gap-4 3xl:w-[513px]">
-                    <CommunityCard link="https://discord.gg/ZP4Jpr2N" img={discord} title="Discord" des="Get Involved" />
+                    <CommunityCard link="https://discord.gg/nimbi" img={discord} title="Discord" des="Get Involved" />
                     <CommunityCard link="https://t.me/+kCsGgSJcJOM0Nzgx" img={telegram} title="telegram" des="join discussion" />
                     <CommunityCard link="https://www.instagram.com/nimbiwolfpack?igsh=MWZheTZ1amxvdm43Mw==" img={instagram} title="instagram" des="join discussion" />
                     <CommunityCard link="" img={x} title="x" des="read the latest" />

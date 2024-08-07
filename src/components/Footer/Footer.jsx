@@ -29,7 +29,7 @@ function Footer({ path = "/" }) {
         <div className="flex flex-col-reverse sm:flex-row items-center gap-[13px]">
           <p className='text-[#a1a7aa] font-["Roboto"]'>our community</p>
           <ul className="list-none flex gap-2 items-center">
-            <li className='w-6 h-6 pt-[3px] px-[2px]'><a target='_blank' href="https://discord.gg/ZP4Jpr2N"><img src={discordIcon} className='w-full h-full object-contain' alt="" /></a></li>
+            <li className='w-6 h-6 pt-[3px] px-[2px]'><a target='_blank' href="https://discord.gg/nimbi"><img src={discordIcon} className='w-full h-full object-contain' alt="" /></a></li>
             <li className='w-6 h-6 py-[5.5px] px-1'><a target='_blank' href="https://t.me/nimbitokenvip"><img src={telegramIcon} className='w-full h-full object-contain' alt="" /></a></li>
             <li className='w-6 h-6 py-1 px-1'><a target='_blank' href="https://www.instagram.com/nimbiwolfpack?igsh=MWZheTZ1amxvdm43Mw%3D%3D"><img src={instagramIcon} className='w-full h-full object-contain' alt="" /></a></li>
             <li className='w-6 h-6 py-0.5 px-0.5'><a target='_blank' href=""><img src={xIcon} className='w-full h-full object-contain' alt="" /></a></li>
