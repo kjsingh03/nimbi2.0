@@ -27,8 +27,8 @@ function Home() {
 
     if (width > 1280) {
       gsap.to('.collectionLeft', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionLeft', start: width >= 1720 ? "bottom 82%" : "bottom 87.5%", end: "top -300%", scrub: true } })
-      gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 77%", end: "top -150%", scrub: true } })
-      gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 77.5%", end: "top -300%", scrub: true } })
+      gsap.to('.collectionRight', { x: 1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 72%", end: "top -150%", scrub: true } })
+      gsap.to('.collectiontop', { x: -1500, duration: 2, scrollTrigger: { trigger: '.collectionRight', start: width >= 1720 ? "bottom 82%" : "bottom 72.5%", end: "top -300%", scrub: true } })
     }
 
     if (width > 768) {
