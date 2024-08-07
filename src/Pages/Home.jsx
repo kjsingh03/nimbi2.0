@@ -96,7 +96,7 @@ function Home() {
           start: `top ${width > 1720 ? '60%' : '90%'}`,
           end: `top -80%`,
           scrub: 1,
-          markers: 1
+          // markers: 1
         }
       });
 
