@@ -96,7 +96,7 @@ function Home() {
           start: `top ${width > 1720 ? '60%' : '90%'}`,
           end: `top -80%`,
           scrub: 1,
-          // markers: 1
+          markers: 1
         }
       });
 
@@ -112,7 +112,7 @@ function Home() {
             scrollTrigger: {
               trigger: section,
               start: `top ${45}%`,
-              // markers: 1
+              scrub:1
             }
           });
         }
@@ -178,11 +178,9 @@ function Home() {
 
         {/* Our Ethos Section Start */}
         <div className="w-screen h-auto bg-[#A1A7AA] relative flex justify-center overflow-hidden">
-          <div className="absolute sm:top-[290px] sm:left-[50%] sm:h-full h-[108px] -left-[396px] sm:-translate-x-[50%] sm:w-screen min-w-[910px] top-[132px] z-[1]">
-            <img src={mountain_back} className="w-full" alt="Back side Mountain" />
-          </div>
+
           <div className="ethos-section z-[10] relative flex justify-between 2xl:w-[1506px] items-center lg:gap-[100px] gap-5 lg:flex-row flex-col-reverse">
-            <div className=" h-fit">
+            <div className="h-fit">
               <div className="xs:max-w-[501px] w-full h-auto px-[45px] pt-[110px] pb-[42px] bg-[#1c2327] border-b border-[#767f84] flex-col justify-start items-start gap-[107px] inline-flex">
                 <div className="ethos self-stretch flex-col justify-start fade-in items-start gap-[19px] flex">
                   <div className="text-center text-white text-4xl font-medium font-roboto capitalize leading-loose">Unity</div>
@@ -198,8 +196,11 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center relative">
               <div className="relative z-[5] w-fit pt-[50px]">
+              <div className="absolute top-[10px] sm:top-[228px] 4xl:top-[170px] left-[50%] sm:left-[50%] lg:left-[5%] 2xl:-left-[18%] h-[226px] 4xl:h-[287px] -translate-x-[50%] w-screen z-[1]">
+                <img src={mountain_back} className="w-full h-full object-cover" alt="Back side Mountain" />
+              </div>
                 <img src={black_dog} className="max-w-full sm:w-full sm:h-full w-[234px] h-[258px]" alt="Black Dog" />
                 <div className="absolute z-[11] sm:bottom-[140px] bottom-[70px] sm:-left-[57px] -left-10">
                   <img src={our} className="sm:w-full sm:h-full w-[141px] h-[59px]" alt="Our" />
@@ -208,7 +209,7 @@ function Home() {
                   <img src={ethos} className="sm:w-full sm:h-full w-[181px] h-[45px]" alt="Ethos" />
                 </div>
               </div>
-              <div className="max-w-[830px] sm:pt-[46px] z-[10] px-8 bg-[#A1A7AA] relative sm:-top-[46px] text-black text-base font-normal font-['Roboto'] leading-normal">Growing up on a reservation in Colorado, Nimbi the wolfdog learned to fend for himself, fighting for scraps. It’s not easy surviving on your own, but Nimbi did. He was eventually rescued by his owner Dack who founded the Nimbi ecosystem in his name. <br /><br />Though today he lives an ideal life in a cabin home in the Colorado mountains, he kept the resilience he earned as a pup. Nimbi is built on these principles. <br /><br />Just as seemingly insignificant leftover scraps can feed a wolf, so too can crypto dust grow into substantial wealth. When a community of decentralized minded people leverage their crypto dust together—they can create incredible change. <br /><br />Our mission is to unite humanity with the power of crypto dust to create a fairer, transparent and prosperous Web3. An empowered world. You with us?<br /></div>
+              <div className="max-w-[830px] py-12 sm:pb-0 sm:pt-[46px] z-[10] px-8 bg-[#A1A7AA] relative sm:-top-[46px] text-black text-base font-normal font-['Roboto'] leading-normal">Growing up on a reservation in Colorado, Nimbi the wolfdog learned to fend for himself, fighting for scraps. It’s not easy surviving on your own, but Nimbi did. He was eventually rescued by his owner Dack who founded the Nimbi ecosystem in his name. <br /><br />Though today he lives an ideal life in a cabin home in the Colorado mountains, he kept the resilience he earned as a pup. Nimbi is built on these principles. <br /><br />Just as seemingly insignificant leftover scraps can feed a wolf, so too can crypto dust grow into substantial wealth. When a community of decentralized minded people leverage their crypto dust together—they can create incredible change. <br /><br />Our mission is to unite humanity with the power of crypto dust to create a fairer, transparent and prosperous Web3. An empowered world. You with us?<br /></div>
             </div>
           </div>
         </div>
@@ -450,7 +451,7 @@ function Home() {
         <div className="overflow-x-hidden z-20">
 
           {/* Token Allocation Section Start */}
-          <div className="z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
+          <div className="-z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
             <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
               <div className=" self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
                 <div className="flex-col justify-start items-center gap-5 flex">
@@ -471,13 +472,13 @@ function Home() {
                 <div className="justify-start items-center xl:flex-row flex-col flex">
                   <div className="justify-start items-center relative top-[60px] xs:top-[92px] xl:top-[unset] flex xl:flex-row flex-col">
                     <div className="xl:max-w-[395px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                      <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
-                        <div className=" pr-6 justify-start items-center gap-[21px] flex">
+                      <div className=" pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-t-0 border-t-4 xl:border-l-4 border-[#7444ff] backdrop-blur-[7px] justify-between items-end xs:items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex">
+                        <div className=" pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Rewards Staking/Airdrops</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Rewards Staking/Airdrops</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
                           </div>
@@ -487,13 +488,13 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
-                        <div className="pr-6 justify-start items-center gap-[21px] flex">
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#c2f947] backdrop-blur-[7px] justify-between items-end xs:items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                        <div className="pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Marketing</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Marketing</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">to get on major exchanges</div>
                           </div>
@@ -503,13 +504,13 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,000N</div>
                         </div>
                       </div>
-                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
-                        <div className="pr-6 justify-start items-center gap-[21px] flex">
+                      <div className="pr-4 min-h-[75px] xs:pb-0 pb-3 w-full bg-[#2d353a] rounded-tl rounded-bl border-t-4 xl:rounded-tr-[0] rounded-tr xl:rounded-br-[0] rounded-br xl:border-l-4 border-[#8e8e8e] backdrop-blur-[7px] justify-between items-end xs:items-center xs:gap-3.5 gap-5 xs:flex-row flex-col inline-flex  xl:border-t-0">
+                        <div className="pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
                           <div className="self-stretch justify-start items-center gap-2.5 flex" />
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">10%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Team</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Team</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">reward the community with airdrops for early support.</div>
                           </div>
@@ -566,13 +567,13 @@ function Home() {
                       </svg>
                     </div>
                     <div className="xl:w-[379px] xs:max-w-[345px] max-w-[226px] min-h[316px] flex-col justify-center items-start gap-2.5 inline-flex">
-                      <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
-                        <div className=" xs:pr-6 justify-start items-center gap-[21px] flex">
+                      <div className=" pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00A3FF] backdrop-blur-[7px] justify-between items-end xs:items-center  xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                        <div className=" xs:pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
 
                           <div className="grow shrink basis-0 flex-col w-full xs:justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">35%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Presale</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Presale</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none"> nimbi token will be sold to public (1,000-3,500 wallet holders)</div>
                           </div>
@@ -582,13 +583,13 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">3,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
-                        <div className="xs:pr-6 justify-start items-center gap-[21px] flex">
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#00FFD1] backdrop-blur-[7px] justify-between items-end xs:items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                        <div className="xs:pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
 
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Private Investors</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Private Investors</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">Reward the community with airdrops for early support.</div>
                           </div>
@@ -598,13 +599,13 @@ function Home() {
                           <div className="text-[#ebeced] text-xs font-normal font-['Inter'] capitalize leading-tight">1,500N</div>
                         </div>
                       </div>
-                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
-                        <div className="xs:pr-6 justify-start items-center gap-[21px] flex">
+                      <div className="pr-4 xs:pr-[4px] xs:pt-0 pt-2 xl:h-[75px] min-h-[75px] w-full bg-[#2d353a] rounded-tr rounded-br xl:rounded-tl-[0] rounded-tl xl:rounded-bl-[0] rounded-bl xl:border-b-0  border-b-4 xs:pb-0 xl:border-r-4 border-[#FD8A16] backdrop-blur-[7px] justify-between items-end xs:items-center xs:gap-3.5 gap-5  xs:flex-row flex-col  inline-flex pb-4 pl-4 xl:pl-0">
+                        <div className="xs:pr-6 justify-start items-center gap-[21px] flex min-w-[210px]">
 
                           <div className="grow shrink basis-0 flex-col justify-center items-start inline-flex">
-                            <div className="  justify-start items-center gap-[13px] inline-flex">
+                            <div className=" max-w-[217px] justify-start items-center gap-[13px] inline-flex">
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">15%</div>
-                              <div className="text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Exchange Listing</div>
+                              <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Exchange Listing</div>
                             </div>
                             <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none">Reward the community with airdrops for early support.</div>
                           </div>
@@ -621,7 +622,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className=" grid lg:pt-[56px] lg:gap-4 w-full lg:px-8 px-4 gap-y-[100px] lg:grid-cols-4 sm:grid-cols-2">
+              <div className="grid lg:pt-[56px] lg:gap-4 w-full lg:px-8 px-4 gap-y-[100px] lg:grid-cols-4 sm:grid-cols-2 place-items-center 2xl:place-items-start">
                 <div className="">
                   <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$NIMBI</div>
                   <div className=" text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Ticker</div>
@@ -652,8 +653,14 @@ function Home() {
 
             <div className="flex flex-col gap-4 sm:gap-16 3xl:gap-[6rem] w-[90%] lg:w-[77.5%] mx-auto">
               <div className="relative">
-                <div className="btn bg-[#5c666c] w-max font-semibold py-[5px] px-[10px] z-10 text-sm 3xl:text-lg"><p>roadmap</p></div>
-                <img src={ellipse} className='absolute -top-6 3xl:-top-8 left-[3.5rem] w-[4.875rem] 3xl:w-[6.375rem] -z-0' alt="" />
+                <div className="justify-start items-center inline-flex relative">
+                  <div className="relative z-[10] px-2.5 py-[5px] bg-[#5c666c] justify-center items-center gap-2.5 flex">
+                    <div className="text-center text-white text-lg font-bold font-['Inter'] leading-7">Roadmap</div>
+                  </div>
+                  <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
+                    <img src={ellipse} alt="Ellipse" />
+                  </div>
+                </div>
               </div>
 
               <p className='text-xs md:text-sm 3xl:text-lg md:w-[70%] pt-6 sm:pt-2'>We follow these roadmap for launching the Nimbi ecosystem. We may experience certain setbacks while developing the whole Nimbi ecosystem, but our team has a right attitude to stick to the course, no matter what!
@@ -668,7 +675,7 @@ function Home() {
 
               <section className='md:static relative w-screen md:h-0'>
                 <div className="w-[100rem] md:w-[250rem] relative">
-                  <img src={mountain} className='mountain absolute opacity-100 h-[45rem] md:h-[18rem] 3xl:h-[19rem] -top-[13rem] xs:-top-[12.5rem] md:top-[2.15rem] 3xl:top-[1.25rem] w-[175rem] 3xl:w-[205rem] -left-[25.5rem] xs:-left-[21.5rem] sm:-left-[12.5rem] md:left-[0rem] -z-30' alt="" />
+                  <img src={mountain} className='mountain absolute opacity-100 h-[45rem] md:h-[18rem] 3xl:h-[19rem] -top-[13rem] xs:-top-[12.5rem] md:top-[2.15rem] 3xl:top-[1.25rem] w-[175rem] 3xl:w-[205rem] -left-[27.5rem] xs:-left-[21.5rem] sm:-left-[12.5rem] md:left-[0rem] -z-30' alt="" />
                 </div>
               </section>
 
