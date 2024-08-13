@@ -113,7 +113,7 @@ function Home() {
             scrollTrigger: {
               trigger: section,
               start: `top ${45}%`,
-              scrub: 1
+              // scrub: 1
             }
           });
         }
@@ -670,7 +670,7 @@ function Home() {
               <p className='text-xs md:text-sm 3xl:text-lg md:w-[70%] pt-6 sm:pt-2'>We follow these roadmap for launching the Nimbi ecosystem. We may experience certain setbacks while developing the whole Nimbi ecosystem, but our team has a right attitude to stick to the course, no matter what!</p>
             </div>
 
-            <div className="mob-roadmap-container bg-[#242D32] pt-2 h-[90rem]">
+            <div className="mob-roadmap-container bg-[#242D32] pt-2 md:h-[90rem] relative">
 
               <div className="lg:block hidden relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
                 <img src={whaleLeft} className='whaleLeft absolute -top-[52.5rem] right-[0rem] -z-50' alt="" />
@@ -684,7 +684,7 @@ function Home() {
                 <img src={roadmap} className='roadmap w-[80%] mx-auto absolute top-[2rem] md:top-[2rem] xl:-top-[4rem] right-[50%] translate-x-[50%] -z-40' alt="" />
               </div>
 
-              <div className="wrapper 3xl:mt-16 bg-red-60">
+              <div className="wrapper 3xl:mt-16 bg-red-60 h-fit">
 
                 <section className='md:static relative w-screen md:h-0'>
                   <div className="w-[100rem] md:w-[250rem] relative">
