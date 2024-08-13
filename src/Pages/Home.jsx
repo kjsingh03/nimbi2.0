@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../App.css'
 import { AnimationCard, CommunityCard, IntroCard, NFTCard, Navbar, ComingSoon } from '../components'
 import { play, collect, profit, author1, author2, author3, author4, author5, ellipse, discord, telegram, x, vector, tick, mountain, indicator, round, whaleLeft, roadmap, logoMask, instagram, youtube, nimbi_hero, mountain_back, black_dog, our, ethos, eth_white, eth_black, ecosystem, mobile2, mobile1, hero_mountain, dualtoken, dolphin, dog_shade, circle_graph, tokenDolphin, whitepaper, fox, puppy, chain, bluePen, foxHead, sec3Bottom } from '../assets'
@@ -151,12 +151,26 @@ function Home() {
     // });
 
   }, { dependencies: [width], scope: main });
+
   const [comingSoon, setComingSoon] = useState("")
+
+  useEffect(() => {
+    if (comingSoon !== "") {
+      // Prevent scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Re-enable scrolling
+      document.body.style.overflow = 'auto';
+    }
+  }, [comingSoon]);
 
   return (
     <>
 
       <Navbar />
+      {
+        comingSoon !== "" && <ComingSoon setComingSoon={setComingSoon} />
+      }
       <div className="z-0 capitalize pt-[4.3rem] xl:pt-[4.4rem] overflow-x-hidden " ref={main}>
 
         <div className="w-screen bg-[#1C2327] overflow-hidden">
@@ -386,9 +400,7 @@ function Home() {
               <div className="max-w-[614px] text-[#ebeced] text-sm font-normal font-['Roboto'] leading-normal">And your guide to untold riches in Crypto Dust Runner. An absolute unit of a Wolfdog, Nimbi is both the heart of the Nimbi Wolfpack and the dev’s Wolfdog companion rescued as a pup from the wilds of Colorado.<br /><br />The $NIMBI token gives you access to Crypto Dust Runner as long as you hold at least 0.1 in your wallet. Full token holders will gain 1 of 10,000 exclusive NFT digital art pieces they can collect and trade. Built on the ERC-404 framework.<br /><br />His alter-ego Mr. Nimbus guides players into the mountains and beyond on their quest for crypto dust.</div>
 
               <div className="btn" onClick={() => setComingSoon("NIMBI")}>Buy $NIMBI</div>
-              {
-                comingSoon == "NIMBI" && <ComingSoon setComingSoon={setComingSoon} />
-              }
+
             </div>
             <div className="flex-col justify-center items-start gap-4 flex relative z-[10]">
               <div className="flex-col justify-start items-start gap-[21px] flex">
@@ -399,9 +411,6 @@ function Home() {
                 <div className="max-w-[603px] text-[#ebeced] text-sm font-normal font-['Roboto'] leading-normal">And your new best friend. $KAZI lets you transform your otherwise wasted leftover crypto dust into $KAZI token which you can stake for more coins, play the lottery, and access dApps that give you the power to shape the community.<br /><br />Convert $KAZI to $NIMBI to gain access to exclusive digital art NFTs and in-game assets to set you apart from the rest of the pack. $KAZI token gives you access to all of Nimbi’s decentralized features letting you earn tokens. Play the Crypto Lottery with your $KAZI to win big. <br /><br />Members can also use their tokens to vote on community initiatives like donating to worthy causes through DAOs. Built on the ERC-20 framework.</div>
                 <div className="btn2 xs:w-[178px] w-full" onClick={() => setComingSoon("KAZI")}>Buy $KAZI</div>
               </div>
-              {
-                comingSoon == "KAZI" && <ComingSoon setComingSoon={setComingSoon} />
-              }
             </div>
 
           </div>
