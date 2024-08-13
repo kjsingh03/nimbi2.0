@@ -20,8 +20,6 @@ function Footer({ path = "/" }) {
           <ul className="list-none flex sm:gap-8 xl:items-center sm:flex-row gap-4 flex-col">
             <li className='hover:underline hover:text-[#00ACE6] cursor-pointer'>Terms and conditions</li>
             <li className='hover:underline hover:text-[#00ACE6] cursor-pointer'>privacy policy</li>
-            <li className='hover:underline hover:text-[#00ACE6] cursor-pointer'>contact us</li>
-            <li className='hover:underline hover:text-[#00ACE6] cursor-pointer'>see our whitepaper</li>
           </ul>
         </div>
       }

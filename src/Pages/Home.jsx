@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import '../App.css'
-import { AnimationCard, CommunityCard, IntroCard, NFTCard, Navbar } from '../components'
-import { play, collect, profit, author1, author2, author3, author4, author5, ellipse, discord, telegram, x, vector, tick, mountain, indicator, round, whaleLeft, roadmap, logoMask, instagram, youtube, nimbi_hero, mountain_back, black_dog, our, ethos, eth_white, eth_black, ecosystem, mobile2, mobile1, hero_mountain, dualtoken, dolphin, dog_shade, circle_graph, tokenDolphin, fox, puppy, chain, bluePen, foxHead, sec3Bottom } from '../assets'
+import { AnimationCard, CommunityCard, IntroCard, NFTCard, Navbar, ComingSoon } from '../components'
+import { play, collect, profit, author1, author2, author3, author4, author5, ellipse, discord, telegram, x, vector, tick, mountain, indicator, round, whaleLeft, roadmap, logoMask, instagram, youtube, nimbi_hero, mountain_back, black_dog, our, ethos, eth_white, eth_black, ecosystem, mobile2, mobile1, hero_mountain, dualtoken, dolphin, dog_shade, circle_graph, tokenDolphin, whitepaper, fox, puppy, chain, bluePen, foxHead, sec3Bottom } from '../assets'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -112,7 +112,7 @@ function Home() {
             scrollTrigger: {
               trigger: section,
               start: `top ${45}%`,
-              scrub:1
+              scrub: 1
             }
           });
         }
@@ -150,12 +150,12 @@ function Home() {
     // });
 
   }, { dependencies: [width], scope: main });
+  const [comingSoon, setComingSoon] = useState("")
 
   return (
     <>
 
       <Navbar />
-
       <div className="z-0 capitalize pt-[4.3rem] xl:pt-[4.4rem] overflow-x-hidden " ref={main}>
 
         <div className="w-screen bg-[#1C2327] overflow-hidden">
@@ -198,9 +198,9 @@ function Home() {
             </div>
             <div className="flex flex-col items-center relative">
               <div className="relative z-[5] w-fit pt-[50px]">
-              <div className="absolute top-[10px] sm:top-[228px] 4xl:top-[170px] left-[50%] sm:left-[50%] lg:left-[5%] 2xl:-left-[18%] h-[226px] 4xl:h-[287px] -translate-x-[50%] w-screen z-[1]">
-                <img src={mountain_back} className="w-full h-full object-cover" alt="Back side Mountain" />
-              </div>
+                <div className="absolute top-[10px] sm:top-[228px] 4xl:top-[170px] left-[50%] sm:left-[50%] lg:left-[5%] 2xl:-left-[18%] h-[226px] 4xl:h-[287px] -translate-x-[50%] w-screen z-[1]">
+                  <img src={mountain_back} className="w-full h-full object-cover" alt="Back side Mountain" />
+                </div>
                 <img src={black_dog} className="max-w-full sm:w-full sm:h-full w-[234px] h-[258px]" alt="Black Dog" />
                 <div className="absolute z-[11] sm:bottom-[140px] bottom-[70px] sm:-left-[57px] -left-10">
                   <img src={our} className="sm:w-full sm:h-full w-[141px] h-[59px]" alt="Our" />
@@ -227,12 +227,12 @@ function Home() {
               <div className="collectionLeft flex flex-col h-auto w-full xl:w-[40%] 2xl:w-[580px]">
                 <div className="flex flex-col gap-[38px] ">
                   <div className="text-[3.25rem] md:text-[4.2rem] 2xl:text-[5rem] 3xl:text-[5rem] font-['Roboto_Condensed'] leading-tight 3xl:leading-[6.5rem] tracking-[0.25px] font-bold uppercase text-[#5c666c]">build your  Wolfpack</div>
-                  <p className="text-2xl text-white font-medium font-['Roboto_Condensed',sans-serif]">10,000 unique collectible wolves strong. </p>
+                  <p className="text-2xl text-white font-medium font-['Roboto_Condensed',sans-serif]">10,000 unique collectible wolves strong. </p>
                   <p className='text-[16px] text-white md:w-[70%]'>Start your personal wolfpack with 3D collectible NFTs and howl at the moon.
                     <br /><br />
                     Members who hold 1 $NIMBI token will get an exclusive digital Wolf NFT minted with proof of ownership from one of the original 10,000 on the ERC-20 protocol.
                     <br /><br />
-                    Collect, trade and grow your own Wolfpack. </p>
+                    Collect, trade and grow your own Wolfpack. </p>
                   <p className='btn w-fit text-sm text-center rounded-[4px] py-2.5 px-[14px]'>Explore the wolves</p>
                 </div>
               </div>
@@ -379,24 +379,30 @@ function Home() {
             </div>
           </div>
           <div className="self-stretch py-[54px] flex-col justify-start items-center gap-[68px] flex relative z-[10]">
-            <div className="flex-col justify-center items-start gap-[19px] flex">
+            <div className="flex-col justify-center items-start gap-[19px] flex  relative z-[10]">
               <div className="max-w-72 uppercase text-white text-6xl font-medium font-roboto sm:leading-[93px] leading-normal">$Nimbi </div>
               <div className="text-white text-2xl font-medium font-roboto capitalize leading-loose">The leader of the pack</div>
               <div className="max-w-[614px] text-[#ebeced] text-sm font-normal font-['Roboto'] leading-normal">And your guide to untold riches in Crypto Dust Runner. An absolute unit of a Wolfdog, Nimbi is both the heart of the Nimbi Wolfpack and the dev’s Wolfdog companion rescued as a pup from the wilds of Colorado.<br /><br />The $NIMBI token gives you access to Crypto Dust Runner as long as you hold at least 0.1 in your wallet. Full token holders will gain 1 of 10,000 exclusive NFT digital art pieces they can collect and trade. Built on the ERC-404 framework.<br /><br />His alter-ego Mr. Nimbus guides players into the mountains and beyond on their quest for crypto dust.</div>
 
-              <div className="btn">Buy $NIMBI</div>
-
+              <div className="btn" onClick={() => setComingSoon("NIMBI")}>Buy $NIMBI</div>
+              {
+                comingSoon == "NIMBI" && <ComingSoon setComingSoon={setComingSoon} />
+              }
             </div>
-            <div className="flex-col justify-center items-start gap-4 flex">
+            <div className="flex-col justify-center items-start gap-4 flex relative z-[10]">
               <div className="flex-col justify-start items-start gap-[21px] flex">
                 <div className="max-w-[260px] text-white text-6xl font-medium font-roboto leading-[93px]">$KAZI </div>
                 <div className="text-white text-2xl font-medium font-roboto capitalize leading-loose">The backbone of the NIMBI ecosystem</div>
               </div>
               <div className="self-stretch flex-col justify-start items-start gap-[19px] flex">
                 <div className="max-w-[603px] text-[#ebeced] text-sm font-normal font-['Roboto'] leading-normal">And your new best friend. $KAZI lets you transform your otherwise wasted leftover crypto dust into $KAZI token which you can stake for more coins, play the lottery, and access dApps that give you the power to shape the community.<br /><br />Convert $KAZI to $NIMBI to gain access to exclusive digital art NFTs and in-game assets to set you apart from the rest of the pack. $KAZI token gives you access to all of Nimbi’s decentralized features letting you earn tokens. Play the Crypto Lottery with your $KAZI to win big. <br /><br />Members can also use their tokens to vote on community initiatives like donating to worthy causes through DAOs. Built on the ERC-20 framework.</div>
-                <div className="btn2 xs:w-[178px] w-full">Buy $KAZI</div>
+                <div className="btn2 xs:w-[178px] w-full" onClick={() => setComingSoon("KAZI")}>Buy $KAZI</div>
               </div>
+              {
+                comingSoon == "KAZI" && <ComingSoon setComingSoon={setComingSoon} />
+              }
             </div>
+
           </div>
         </div>
         {/* Dual Tokens Section End */}
@@ -417,7 +423,7 @@ function Home() {
               <div className="flex flex-col gap-[24px] ">
                 <div className="flex flex-col gap-[20px] ">
                   <div className="text-[#a1a7aa] text-[42px] xs:text-6xl font-medium font-roboto uppercase leading-[60px]">Every dog has its Dao</div>
-                  <div className="text-white text-2xl font-medium font-roboto capitalize leading-loose">Contribute crypto dust to decide on Nimbi’s destiny. </div>
+                  <div className="text-white text-2xl font-medium font-roboto capitalize leading-loose">Contribute crypto dust to decide on Nimbi’s destiny. </div>
 
                 </div>
                 <div className="text-[#ebeced] text-base font-normal font-['Roboto'] leading-normal">Nimbi is the only top dog. Everyone else is equal. Through Decentralized Autonomous Organizations (DAOs) you get to take ownership of community decisions and make choices that directly impact the direction of the project. <br /><br />Wolfpack members vote on community projects to shape the future of the ecosystem. If only all voting worked this way.</div>
@@ -452,7 +458,7 @@ function Home() {
 
           {/* Token Allocation Section Start */}
           <div className="-z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
-            <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[10]">
+            <div className="max-w-[1406px] flex-col justify-start items-start gap-[55px] inline-flex relative z-[20]">
               <div className=" self-stretch px-4  flex-col justify-start items-center gap-[87px] flex">
                 <div className="flex-col justify-start items-center gap-5 flex">
                   <div className="justify-start h-[102px] items-center inline-flex relative">
@@ -575,7 +581,7 @@ function Home() {
                               <div className="text-white xs:text-[32px] text-[24px] font-medium font-['Roboto'] capitalize leading-9">35%</div>
                               <div className="2xl:whitespace-nowrap text-white xs:text-lg font-semibold font-['Inter'] capitalize leading-tight text-[15px]">Presale</div>
                             </div>
-                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none"> nimbi token will be sold to public (1,000-3,500 wallet holders)</div>
+                            <div className="self-stretch text-[#ebeced] text-xs font-light font-['Roboto'] capitalize leading-none"> nimbi token will be sold to public (1,000-3,500 wallet holders)</div>
                           </div>
                         </div>
                         <div className="xs:flex-col justify-start items-end xs:pr-4 gap-[5px] inline-flex">
@@ -623,21 +629,21 @@ function Home() {
                 </div>
               </div>
               <div className="grid lg:pt-[56px] lg:gap-4 w-full lg:px-8 px-4 gap-y-[100px] lg:grid-cols-4 sm:grid-cols-2 place-items-center 2xl:place-items-start">
-                <div className="">
+                <div className=" mx-auto">
                   <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$NIMBI</div>
-                  <div className=" text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Ticker</div>
+                  <div className="text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose text-center lg:text-start">Ticker</div>
                 </div>
-                <div className="">
-                  <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$25M</div>
-                  <div className=" text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Circulating Supply</div>
+                <div className=" mx-auto">
+                  <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] text-center leading-[72px]">$25M</div>
+                  <div className="text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose text-center lg:text-start">Circulating Supply</div>
                 </div>
-                <div className="">
+                <div className=" mx-auto">
                   <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">$300,000</div>
-                  <div className=" text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Total Supply</div>
+                  <div className="text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose text-center lg:text-start">Total Supply</div>
                 </div>
-                <div className="lg:text-center">
+                <div className="lg:text-center mx-auto">
                   <div className=" text-white sm:text-[64px] text-[54px] font-bold font-['Cousine'] leading-[72px]">7K+</div>
-                  <div className=" text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose">Members</div>
+                  <div className="text-[#00ace6] text-2xl font-normal font-['Roboto'] leading-loose text-center lg:text-start">Members</div>
                 </div>
               </div>
             </div>
@@ -680,11 +686,11 @@ function Home() {
               </section>
 
               <div className="container scrollx overflow-hidden md:overflow-visible pt-[6rem] mt-[8rem] xs:mt-[12rem] md:mt-0 md:pt-0">
-                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2023 Q1" phase="1" status='completed' src={tick} icon={round} year="2023" list={["Idea Concept", "WhitePaper Creation", "Marketing Strategy Planning", "Start Development Web3 Video Game", "Kazi Smart Contract Development", "Nimbi Smart Contract Development", "Social Media Partnerships", "tokenomics development", "securing initial funding"]} />
+                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q1" phase="1" status='completed' src={tick} icon={round} year="2024" list={["Idea Concept", "WhitePaper Creation", "Marketing Strategy Planning", "Start Development Web3 Video Game", "Kazi Smart Contract Development", "Nimbi Smart Contract Development", "Social Media Partnerships", "tokenomics development", "securing initial funding"]} />
                 <AnimationCard zIndex={90} title="Pre-Sale Phase" desc="2024 Q1" phase="2" status='incompleted' src={tick} icon={indicator} year="2024" list={["Community Building", "Partnerships and Collaborations", "Beta Lunch Web3 Video Game", "Create 10,000 NFT 3D Art Collection for erc-404", "Completing Private Sale", "Airdrop", "Crypto Dust Converter", "Main Web-page Development", "Pre-Sale start"]} />
                 <AnimationCard zIndex={80} title="Pre-Sale Phase" desc="2024 Q2" phase="3" status='incompleted' src={vector} icon={indicator} year="2024" list={["Kazi Mediation", "Crypto Dust Lotto", "Nimbi VIP Wolfpack", "test smart contract and deploy dapps", "launch beta version for CDR", "start v2 of Crypto Dust Runner"]} />
-                <AnimationCard zIndex={70} title="Pre-Sale Phase" desc="2024 Q3" phase="4" status='incompleted' src={vector} icon={indicator} year="2025" />
-                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2026" />
+                <AnimationCard zIndex={70} title="Pre-Sale Phase" desc="2024 Q3" phase="4" status='incompleted' src={vector} icon={indicator} year="2024" />
+                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2024" />
               </div>
             </div>
           </div>
@@ -700,7 +706,7 @@ function Home() {
               <div className="self-stretch bg-[#1c2327] border-t border-b border-[#767f84] flex-col justify-start items-center flex">
                 <div className="max-w-[1504px] w-full grid xl:grid-cols-3 grid-cols-1 justify-center">
                   <div className="flex justify-center">
-                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t border-l border-r border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
+                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-8 sm:px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t border-l border-r border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
                       <img className="h-[92px]" src={fox} alt='fox' />
                       <div className="self-stretch flex-col justify-start items-center gap-2 flex">
                         <div className="text-center text-white text-xl font-bold font-['Inter'] leading-7">WOLFPACK OWNED</div>
@@ -710,21 +716,21 @@ function Home() {
                   </div>
                   <div className="flex justify-center">
 
-                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t xl:border-l-0 border-l border-r xl:border-r-0 border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
+                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-8 sm:px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t xl:border-l-0 border-l border-r xl:border-r-0 border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
                       <img className="w-[90px] h-[94px]" src={chain} alt='chain' />
                       <div className="self-stretch h-[117px] flex-col justify-start items-center gap-2 flex">
                         <div className="text-center text-white text-xl font-bold font-['Inter'] leading-7">SMARTER CONTRACTS</div>
-                        <div className="w-[368px] text-center text-[#c0c4c6] text-sm font-normal font-['Roboto'] leading-tight">The Nimbi ecosystem leverages the blockchain so players can verify the fairness of game mechanics and transactions, transparently.<br /></div>
+                        <div className="max-w-[368px] text-center text-[#c0c4c6] text-sm font-normal font-['Roboto'] leading-tight">The Nimbi ecosystem leverages the blockchain so players can verify the fairness of game mechanics and transactions, transparently.<br /></div>
                       </div>
                     </div>
                   </div>
                   <div className="flex justify-center">
 
-                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t border-l border-r border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
+                    <div className="grow shrink xl:mx-0 max-w-[501px] basis-0 px-8 sm:px-[13px] py-[42px] bg-[#1c2327] xl:border-t-0 border-t border-l border-r border-[#767f84] flex-col justify-start items-center gap-4 inline-flex">
                       <img className="w-[90px] h-[94px]" src={puppy} alt='puppy' />
                       <div className="h-[77px] flex-col justify-start items-center gap-2 flex">
                         <div className="text-center text-white text-xl font-bold font-['Inter'] leading-7">PUPPY POWER</div>
-                        <div className="w-[387px] text-center text-[#c0c4c6] text-sm font-normal font-['Roboto'] leading-tight">Enter a new era of Wolfdog coins championed by two lovable mascots, Nimbi and Kazi. </div>
+                        <div className="max-w-[387px] text-center text-[#c0c4c6] text-sm font-normal font-['Roboto'] leading-tight">Enter a new era of Wolfdog coins championed by two lovable mascots, Nimbi and Kazi. </div>
                       </div>
                     </div>
                   </div>
@@ -733,10 +739,10 @@ function Home() {
             </div>
             <div className=" w-full flex flex-col items-center gap-10 xs:gap-[90px] justify-end relative">
               <div className="flex items-center justify-center w-full">
-                <div className="w-full flex lg:flex-row gap-6 lg:gap-4 flex-col items-center px-5 xs:px-10 lg:px-[3.25rem] xl:px-[12rem] py-10 xs:py-[7rem] 2xl:px-[18rem] 3xl:px-[24rem] justify-between lg:py-16">
-                  <div className="flex flex-col gap-[19px] lg:w-[50%] text-left min-h-[342px] justify-center w-full 3xl:w-[561px] relative">
-                    <img src={logoMask} className='top-0 left-0 z-[1] sm:absolute opacity-50' alt="logoMask" />
-                    <div className="relative z-[10] w-fit flex flex-col gap-[19px] items-center sm:ml-auto">
+                <div className="lg:max-w-[unset] w-full flex lg:flex-row gap-[117px] flex-col items-center px-5 xs:px-10 lg:px-[3.25rem] xl:px-[12rem] py-10 xs:py-[7rem] 2xl:px-[18rem] 3xl:px-[24rem] justify-between lg:py-16 max-w-[521px]">
+                  <div className="flex flex-col gap-[19px] lg:w-[50%] text-left min-h-[342px]  w-full 3xl:w-[561px] relative lg:justify-center justify-end items-center">
+                    <img src={logoMask} className='sm:top-0 lg:-translate-x-[46%] lg:left-[unset] lg:right-0 sm:left-[50%] sm:-translate-x-[50%] z-[1] sm:absolute opacity-50' alt="logoMask" />
+                    <div className="relative z-[10] w-fit flex flex-col gap-[19px] items-center lg:ml-auto ">
                       <p className="text-[36px] sm:text-[3.125rem] leading-tight font-semibold font-['Roboto_Condensed',sans-serif] ">Join the big dogs</p>
                       <p className='text-[21px] sm:text-[30px]'>🐺Become a Nimbi Wolf 🐺</p>
                     </div>
@@ -756,11 +762,8 @@ function Home() {
             <img className="w-[242px] h-[242px]" src={bluePen} alt="bluePen" />
             <div className="text-black text-6xl font-medium font-roboto leading-[60px] uppercase">Whitepaper</div>
             <div className="max-w-[1032px] text-center text-black text-base font-normal font-['Roboto'] capitalize leading-normal">Explore the Nimbi whitepaper and get an in-depth breakdown of the unique benefits, innovative features, and overall vision of the NIMBI ecosystem and its native token. This clear, concise, and expertly crafted informational report will help you understand exactly what sets NIMBI apart from other crypto projects.<br /><br />Dive into our educational white paper and find out why taking this journey with us is an absolute no-brainer!</div>
-            <div className="px-3.5 py-2.5 hover:bg-[#242d32] duration-300 cursor-pointer bg-[#33bdeb] xs:w-fit w-full rounded justify-center items-start gap-2.5 inline-flex">
-              <div className="px-1 justify-start items-start gap-2.5 flex">
-                <div className="text-center text-white text-base font-medium font-['Inter'] leading-normal">Access The Whitepaper</div>
-              </div>
-            </div>
+            <a href={whitepaper} target='_blank' className="btn" style={{ width: "fit-content" }}>Access The Whitepaper</a>
+
           </div>
 
           <div className="w-full flex justify-center">
