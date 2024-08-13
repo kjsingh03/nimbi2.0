@@ -11,7 +11,8 @@ import Footer from '../components/Footer/Footer';
 function Home() {
 
   const main = useRef()
-  const width = window.innerWidth
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
   useGSAP(() => {
 
@@ -38,11 +39,11 @@ function Home() {
         ease: "none",
         duration: 3,
         scrollTrigger: {
-          trigger: ".roadmap-container",
+          trigger: height < 1000 ? '.mob-roadmap-container' : '.roadmap-container',
           pin: true,
           scrub: 1,
           end: "+=800",
-          // markers: true,
+          markers: true,
         }
       });
 
@@ -67,7 +68,7 @@ function Home() {
         x: 250,
         duration: 4.5,
         scrollTrigger: {
-          trigger: '.roadmap-container',
+          trigger: height > 1000 ? '.mob-roadmap-container' : '.roadmap-container',
           start: `top 35%`,
           end: `top -100%`,
           scrub: 1,
@@ -79,7 +80,7 @@ function Home() {
         x: -750,
         ease: "none",
         scrollTrigger: {
-          trigger: ".roadmap-container",
+          trigger: height > 1000 ? '.mob-roadmap-container' : '.roadmap-container',
           start: "top 0%",
           end: width < 1720 ? "bottom 15%" : "bottom 25%",
           scrub: 1,
@@ -92,7 +93,7 @@ function Home() {
         opacity: 0,
         duration: 4.5,
         scrollTrigger: {
-          trigger: '.roadmap-container',
+          trigger: height > 1000 ? '.mob-roadmap-container' : '.roadmap-container',
           start: `top ${width > 1720 ? '60%' : '90%'}`,
           end: `top -80%`,
           scrub: 1,
@@ -454,7 +455,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="overflow-x-hidden z-20">
+        <div className="overflow-hidden z-20">
 
           {/* Token Allocation Section Start */}
           <div className="-z-[100] flex justify-center w-screen py-[28px] lg:py-[112px] sm:pb-0 pb-20 relative bg-[#242D32]">
@@ -653,8 +654,8 @@ function Home() {
           {/* Animation Section Start */}
 
           <div className="roadmap-container -z-50 bg-[url(./assets/bigEllipse.png)] sm:bg-[_33rem_33rem] bg-[50rem_1rem] sm:bg-[152vw_6rem] xl:bg-[72vw_6rem] 3xl:bg-[77vw_6rem] bg-no-repeat flex flex-col sm:gap-0 mt-16 pt-0 md:pt-[6rem] lg:pt-0 xl:mt-[5rem]">
+
             <div className="lg:block hidden border-t -translate-x-[55%] relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
-              <img src={whaleLeft} className='whaleLeft absolute top-[303rem] lg:-top-[35.5rem] -right-[70rem] lg:-right-[53rem] 3xl:-right-[65rem] -z-50' alt="" />
             </div>
 
             <div className="flex flex-col gap-4 sm:gap-16 3xl:gap-[6rem] w-[90%] lg:w-[77.5%] mx-auto">
@@ -663,35 +664,43 @@ function Home() {
                   <div className="relative z-[10] px-2.5 py-[5px] bg-[#5c666c] justify-center items-center gap-2.5 flex">
                     <div className="text-center text-white text-lg font-bold font-['Inter'] leading-7">Roadmap</div>
                   </div>
-                  <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
-                    <img src={ellipse} alt="Ellipse" />
-                  </div>
                 </div>
               </div>
 
-              <p className='text-xs md:text-sm 3xl:text-lg md:w-[70%] pt-6 sm:pt-2'>We follow these roadmap for launching the Nimbi ecosystem. We may experience certain setbacks while developing the whole Nimbi ecosystem, but our team has a right attitude to stick to the course, no matter what!
-              </p>
-
-              <div className="relative">
-                <img src={roadmap} className='roadmap absolute top-[2rem] md:top-[2rem] xl:-top-[4rem] -right-[0] 3xl:right- 5xl:right-48 -z-40' alt="" />
-              </div>
+              <p className='text-xs md:text-sm 3xl:text-lg md:w-[70%] pt-6 sm:pt-2'>We follow these roadmap for launching the Nimbi ecosystem. We may experience certain setbacks while developing the whole Nimbi ecosystem, but our team has a right attitude to stick to the course, no matter what!</p>
             </div>
 
-            <div className="wrapper 3xl:mt-16">
+            <div className="mob-roadmap-container bg-[#242D32] pt-2 h-[90rem]">
 
-              <section className='md:static relative w-screen md:h-0'>
-                <div className="w-[100rem] md:w-[250rem] relative">
-                  <img src={mountain} className='mountain absolute opacity-100 h-[45rem] md:h-[18rem] 3xl:h-[19rem] -top-[13rem] xs:-top-[12.5rem] md:top-[2.15rem] 3xl:top-[1.25rem] w-[175rem] 3xl:w-[205rem] -left-[27.5rem] xs:-left-[21.5rem] sm:-left-[12.5rem] md:left-[0rem] -z-30' alt="" />
-                </div>
-              </section>
-
-              <div className="container scrollx overflow-hidden md:overflow-visible pt-[6rem] mt-[8rem] xs:mt-[12rem] md:mt-0 md:pt-0">
-                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q1" phase="1" status='completed' src={tick} icon={round} year="2024" list={["Idea Concept", "WhitePaper Creation", "Marketing Strategy Planning", "Start Development Web3 Video Game", "Kazi Smart Contract Development", "Nimbi Smart Contract Development", "Social Media Partnerships", "tokenomics development", "securing initial funding"]} />
-                <AnimationCard zIndex={90} title="Pre-Sale Phase" desc="2024 Q1" phase="2" status='incompleted' src={tick} icon={indicator} year="2024" list={["Community Building", "Partnerships and Collaborations", "Beta Lunch Web3 Video Game", "Create 10,000 NFT 3D Art Collection for erc-404", "Completing Private Sale", "Airdrop", "Crypto Dust Converter", "Main Web-page Development", "Pre-Sale start"]} />
-                <AnimationCard zIndex={80} title="Pre-Sale Phase" desc="2024 Q2" phase="3" status='incompleted' src={vector} icon={indicator} year="2024" list={["Kazi Mediation", "Crypto Dust Lotto", "Nimbi VIP Wolfpack", "test smart contract and deploy dapps", "launch beta version for CDR", "start v2 of Crypto Dust Runner"]} />
-                <AnimationCard zIndex={70} title="Pre-Sale Phase" desc="2024 Q3" phase="4" status='incompleted' src={vector} icon={indicator} year="2024" />
-                <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2024" />
+              <div className="lg:block hidden relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
+                <img src={whaleLeft} className='whaleLeft absolute top-[303rem] lg:-top-[55.5rem] right-[0rem] -z-50' alt="" />
               </div>
+
+              <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
+                <img src={ellipse} alt="Ellipse" />
+              </div>
+
+              <div className="relative">
+                <img src={roadmap} className='roadmap w-[80%] mx-auto absolute top-[2rem] md:top-[2rem] xl:-top-[4rem] right-[50%] translate-x-[50%] -z-40' alt="" />
+              </div>
+
+              <div className="wrapper 3xl:mt-16 bg-red-60">
+
+                <section className='md:static relative w-screen md:h-0'>
+                  <div className="w-[100rem] md:w-[250rem] relative">
+                    <img src={mountain} className='mountain absolute opacity-100 h-[45rem] md:h-[18rem] 3xl:h-[19rem] -top-[13rem] xs:-top-[12.5rem] md:top-[2.15rem] 3xl:top-[1.25rem] w-[175rem] 3xl:w-[205rem] -left-[27.5rem] xs:-left-[21.5rem] sm:-left-[12.5rem] md:left-[0rem] -z-30' alt="" />
+                  </div>
+                </section>
+
+                <div className="container scrollx overflow-hidden md:overflow-visible pt-[6rem] mt-[8rem] xs:mt-[12rem] md:mt-0 md:pt-0">
+                  <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q1" phase="1" status='completed' src={tick} icon={round} year="2024" list={["Idea Concept", "WhitePaper Creation", "Marketing Strategy Planning", "Start Development Web3 Video Game", "Kazi Smart Contract Development", "Nimbi Smart Contract Development", "Social Media Partnerships", "tokenomics development", "securing initial funding"]} />
+                  <AnimationCard zIndex={90} title="Pre-Sale Phase" desc="2024 Q1" phase="2" status='incompleted' src={tick} icon={indicator} year="2024" list={["Community Building", "Partnerships and Collaborations", "Beta Lunch Web3 Video Game", "Create 10,000 NFT 3D Art Collection for erc-404", "Completing Private Sale", "Airdrop", "Crypto Dust Converter", "Main Web-page Development", "Pre-Sale start"]} />
+                  <AnimationCard zIndex={80} title="Pre-Sale Phase" desc="2024 Q2" phase="3" status='incompleted' src={vector} icon={indicator} year="2024" list={["Kazi Mediation", "Crypto Dust Lotto", "Nimbi VIP Wolfpack", "test smart contract and deploy dapps", "launch beta version for CDR", "start v2 of Crypto Dust Runner"]} />
+                  <AnimationCard zIndex={70} title="Pre-Sale Phase" desc="2024 Q3" phase="4" status='incompleted' src={vector} icon={indicator} year="2024" />
+                  <AnimationCard zIndex={60} title="Pre-Sale Phase" desc="2024 Q3" phase="5" status='incompleted' src={vector} icon={indicator} year="2024" />
+                </div>
+              </div>
+
             </div>
           </div>
 
