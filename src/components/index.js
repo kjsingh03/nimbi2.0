@@ -5,5 +5,6 @@ import TeamCard from "./Card/TeamCard";
 import AnimationCard from "./Card/AnimationCard";
 import CommunityCard from "./Card/CommunityCard";
 import Ethos from "./Reusable/Ethos";
+import ComingSoon from "./Popup/ComingSoon";
 
-export { Navbar, CommunityCard, IntroCard, NFTCard, TeamCard, AnimationCard, Ethos }
+export { Navbar, CommunityCard, IntroCard, NFTCard, TeamCard, AnimationCard, Ethos, ComingSoon }
