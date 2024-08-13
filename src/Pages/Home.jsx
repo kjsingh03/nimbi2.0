@@ -43,7 +43,7 @@ function Home() {
           pin: true,
           scrub: 1,
           end: "+=800",
-          markers: true,
+          // markers: true,
         }
       });
 
@@ -673,7 +673,7 @@ function Home() {
             <div className="mob-roadmap-container bg-[#242D32] pt-2 h-[90rem]">
 
               <div className="lg:block hidden relative -z-50 mt-[2rem] pb-[5.5rem] 3xl:pb-[7rem]">
-                <img src={whaleLeft} className='whaleLeft absolute top-[303rem] lg:-top-[55.5rem] right-[0rem] -z-50' alt="" />
+                <img src={whaleLeft} className='whaleLeft absolute -top-[52.5rem] right-[0rem] -z-50' alt="" />
               </div>
 
               <div className="w-[102px] h-[102px] absolute z-[1] -right-[55px]">
